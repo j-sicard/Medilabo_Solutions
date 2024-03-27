@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add New Patient</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+
+		<div class="row">
+			<h2>Add New Patient</h2>
+		</div>
+
+		<form action="/creerPatient" method="post">
+			<label for="firstname">Firstname :</label>
+			<input type="text" id="firstname" name="firstname" required><br><br>
+
+			<label for="lastname">Lastname :</label>
+			<input type="text" id="lastname" name="lastname" required><br><br>
+
+			<label for="birthDay">Date of birth :</label>
+			<input type="date" id="birthDay" name="birthDay" required><br><br>
+
+			<label for="gender">Gender :</label>
+			<select id="gender" name="gender" required>
+				<option value="M">Male</option>
+				<option value="F">Feminine</option>
+			</select><br><br>
+
+			<label for="address">Adress :</label>
+			<textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
+
+			<label for="phoneNumber">Phone number :</label>
+			<input type="tel" id="phoneNumber" name="phoneNumber" required><br><br>
+
+			<input type="submit" class="btn btn-primary" value="creates">
+			<a href="/patient/list" class="btn btn-primary">return to patient list</a>
+		</form>
+
+	</div>
+
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
