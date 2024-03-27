@@ -1,29 +1,51 @@
 package com.mfront.front.beans;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+
+
 import java.util.Date;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PatientBean {
-   
-    private String firstname;  
     
-   
+    @Size(max = 50, message = "The first name cannot exceed 50 characters.")
+    @Pattern(regexp = "^[a-zA-Z]*$", message = "The first name can only contain letters.")
+    private String firstname;
+
+    @Size(max = 50, message = "The last name cannot exceed 50 characters.")
+    @Pattern(regexp = "^[a-zA-Z]*$", message = "The last name can only contain letters.")
     private String lastname;
 
-    
+    @NotNull(message = "Date of birth cannot be null.")
+    @Past(message = "The date of birth must be in the past.")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date birthDay;
 
-    
+    @NotNull(message = "Gender cannot be null.")
+    @Pattern(regexp = "[MF]", message = "Gender must be 'M' for masculine or 'F' for feminine.")
     private String gender;
 
-    
+    @Size(max = 100, message = "The maximum address length is 100 characters.")
     private String address;
 
-    
+    @Size(max = 15, message = "The maximum phone number length is 15 characters.")
+    @Pattern(regexp = "^\\d{3}-\\d{3}-\\d{4}$", message = "The phone number must be in the format 'XXX-XXX-XXXX'.")
     private String phoneNumber;
 
     public PatientBean() {
-        
+    }
+
+    public PatientBean(String firstname, String lastname, Date birthDay, String gender, String address, String phoneNumber) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthDay = birthDay;
+        this.gender = gender;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getFirstname() {
@@ -80,3 +102,4 @@ public class PatientBean {
                 + gender + ", address=" + address + ", phoneNumber=" + phoneNumber + "]";
     }
 }
+

@@ -58,6 +58,7 @@ public class PatientController {
 
     @PostMapping("/create")
     public ResponseEntity<String> createPatient(@RequestBody PatientMO patientMO){
+    	System.out.println(patientMO); 
         boolean created = patientBusiness.createProfilePatient(patientMO);
         if (created) {
             return ResponseEntity.ok("Patient created successfully");

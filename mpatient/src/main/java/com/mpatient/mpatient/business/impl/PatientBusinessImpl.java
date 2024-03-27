@@ -39,8 +39,7 @@ public class PatientBusinessImpl implements PatientBusiness {
             patientCRUDService.SavePatient(patientMO);
             return true;
         }
-    }
-
+    }    
 
 
     public void deleteProfilePatient(String firstname, String lastname){

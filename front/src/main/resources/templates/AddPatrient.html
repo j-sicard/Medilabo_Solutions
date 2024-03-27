@@ -7,43 +7,65 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<div class="container">
-
-		<div class="row">
-			<h2>Add New Patient</h2>
-		</div>
-
-		<form action="/creerPatient" method="post">
-			<label for="firstname">Firstname :</label>
-			<input type="text" id="firstname" name="firstname" required><br><br>
-
-			<label for="lastname">Lastname :</label>
-			<input type="text" id="lastname" name="lastname" required><br><br>
-
-			<label for="birthDay">Date of birth :</label>
-			<input type="date" id="birthDay" name="birthDay" required><br><br>
-
-			<label for="gender">Gender :</label>
-			<select id="gender" name="gender" required>
-				<option value="M">Male</option>
-				<option value="F">Feminine</option>
-			</select><br><br>
-
-			<label for="address">Adress :</label>
-			<textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
-
-			<label for="phoneNumber">Phone number :</label>
-			<input type="tel" id="phoneNumber" name="phoneNumber" required><br><br>
-
-			<input type="submit" class="btn btn-primary" value="creates">
-			<a href="/patient/list" class="btn btn-primary">return to patient list</a>
-		</form>
-
-	</div>
-
-	</div>
+<div class="container">
+    <div class="row">
+        <h2>Add New Patient</h2>
+    </div>
+    <!-- Affichage des messages de succès ou d'erreur -->
+    <div th:if="${successMessage}" class="alert alert-success" role="alert">
+        <p th:text="${successMessage}"></p>
+    </div>
+    <div th:if="${errorMessage}" class="alert alert-danger" role="alert">
+        <p th:text="${errorMessage}"></p>
+    </div>
+    <form id="patientForm">
+        <label for="firstName">Firstname :</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+        <label for="lastName">Lastname :</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+        <label for="birthDay">Date of birth :</label>
+        <input type="date" id="birthDay" name="birthDay" required><br><br>
+        <label for="gender">Gender :</label>
+        <select id="gender" name="gender" required>
+            <option value="M">Male</option>
+            <option value="F">Feminine</option>
+        </select><br><br>
+        <label for="address">Adress :</label>
+        <textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
+        <label for="phoneNumber">Phone number :</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required><br><br>
+        <button type="button" class="btn btn-primary" onclick="submitForm()">Create</button>
+        <!-- Pas besoin de lien de retour ici, car vous redirigez après la création -->
+    </form>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function submitForm() {
+        var formData = {
+            firstName: $("#firstName").val(),
+            lastName: $("#lastName").val(),
+            birthDay: $("#birthDay").val(),
+            gender: $("#gender").val(),
+            address: $("#address").val(),
+            phoneNumber: $("#phoneNumber").val()
+        };
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/patient/create",
+            data: JSON.stringify(formData),
+            dataType: 'json',
+            success: function (data) {
+                console.log('Success:', data);
+                // Gérer la réponse du serveur ici, par exemple, afficher un message de succès
+            },
+            error: function (error) {
+                console.error('Error:', error);
+                // Gérer les erreurs ici, par exemple, afficher un message d'erreur
+            }
+        });
+    }
+</script>
 </body>
 </html>
