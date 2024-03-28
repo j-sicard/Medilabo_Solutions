@@ -51,11 +51,9 @@ public class FrontController {
 	
 	@PostMapping("/patient/create")
 	public ResponseEntity<String> createPatient(@RequestBody PatientBean patientBean) {
-	    ResponseEntity<String> response = microservicePatientsproxy.addPatient(patientBean);
-	    // Traitez ici la réponse en fonction de son statut et de son contenu
+	    ResponseEntity<String> response = microservicePatientsproxy.addPatient(patientBean);	    
 	    return response;
 	}
-
 	
 
 	@GetMapping("/patient/update")

@@ -11,18 +11,13 @@
     <div class="row">
         <h2>Add New Patient</h2>
     </div>
-    <!-- Affichage des messages de succès ou d'erreur -->
-    <div th:if="${successMessage}" class="alert alert-success" role="alert">
-        <p th:text="${successMessage}"></p>
-    </div>
-    <div th:if="${errorMessage}" class="alert alert-danger" role="alert">
-        <p th:text="${errorMessage}"></p>
-    </div>
+    <!-- Affichage de la réponse du contrôleur -->
+    <div id="responseMessage" style="display: none;"></div>
     <form id="patientForm">
-        <label for="firstName">Firstname :</label>
-        <input type="text" id="firstName" name="firstName" required><br><br>
-        <label for="lastName">Lastname :</label>
-        <input type="text" id="lastName" name="lastName" required><br><br>
+        <label for="firstname">Firstname :</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+        <label for="lastname">Lastname :</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
         <label for="birthDay">Date of birth :</label>
         <input type="date" id="birthDay" name="birthDay" required><br><br>
         <label for="gender">Gender :</label>
@@ -30,25 +25,27 @@
             <option value="M">Male</option>
             <option value="F">Feminine</option>
         </select><br><br>
-        <label for="address">Adress :</label>
+        <label for="address">Address :</label>
         <textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
         <label for="phoneNumber">Phone number :</label>
         <input type="tel" id="phoneNumber" name="phoneNumber" required><br><br>
         <button type="button" class="btn btn-primary" onclick="submitForm()">Create</button>
-        <!-- Pas besoin de lien de retour ici, car vous redirigez après la création -->
+        <a href="/patient/list" class="btn btn-primary">return to patient list</a>
     </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     function submitForm() {
         var formData = {
-            firstName: $("#firstName").val(),
-            lastName: $("#lastName").val(),
+            firstname: $("input[name='firstname']").val(),
+            lastname: $("input[name='lastname']").val(),
             birthDay: $("#birthDay").val(),
             gender: $("#gender").val(),
             address: $("#address").val(),
             phoneNumber: $("#phoneNumber").val()
         };
+
+        console.log("FormData:", formData);
 
         $.ajax({
             type: "POST",
@@ -58,11 +55,11 @@
             dataType: 'json',
             success: function (data) {
                 console.log('Success:', data);
-                // Gérer la réponse du serveur ici, par exemple, afficher un message de succès
+                $("#responseMessage").removeClass("alert-danger").addClass("alert-success").text(data).show();
             },
             error: function (error) {
                 console.error('Error:', error);
-                // Gérer les erreurs ici, par exemple, afficher un message d'erreur
+                $("#responseMessage").removeClass("alert-success").addClass("alert-danger").text(error.responseJSON.message).show();
             }
         });
     }
