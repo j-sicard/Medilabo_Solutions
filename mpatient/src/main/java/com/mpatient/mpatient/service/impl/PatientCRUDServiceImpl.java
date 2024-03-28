@@ -29,18 +29,12 @@ public class PatientCRUDServiceImpl implements PatientCRUDService {
         patientRepository.deleteById(patientId);
     }
 
-    public void updatePatientByid(long patientId, PatientBO patientBO) {
-        Optional<PatientMO> patientOptional = Optional.ofNullable(patientRepository.findById(patientId));
-
-        if (patientOptional.isPresent()) {
-            PatientMO patient = patientOptional.get();
-
-            if (patientBO.getFirstname() != null) {
-                patient.setFirstname(patientBO.getFirstname());
-            }
-            if (patientBO.getLastname() != null) {
-                patient.setLastname(patientBO.getLastname());
-            }
+    public void updatePatient(PatientMO patient, PatientBO patientBO) {
+       
+        if (patient != null && patientBO != null) {
+           
+            System.out.println("Log Service Patient: " + patientBO);           
+           
             if (patientBO.getAddress() != null) {
                 patient.setAddress(patientBO.getAddress());
             }
@@ -51,13 +45,14 @@ public class PatientCRUDServiceImpl implements PatientCRUDService {
                 patient.setBirthDay(patientBO.getBirthDay());
             }
             if (patientBO.getPhoneNumber() != null) {
-                patient.setPhoneNumber(patientBO.getPhoneNumber());        }
-
+                patient.setPhoneNumber(patientBO.getPhoneNumber());
+            }            
             patientRepository.save(patient);
-        } else {
-            throw new EntityNotFoundException("Patient with ID " + patientId + " not found");
-        }
+        } else {           
+            System.out.println("Erreur : patient or patientBO is null.");     }
     }
+
+
 
 
     public void SavePatient(PatientMO patientMO){

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>Patient Information</title>
+	<title>Update patient</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -10,18 +10,38 @@
 
 <body>
 	<div class="container">
-		<h1 class="text-center">Patient Information</h1>
+		<h1 class="text-center">Update patient</h1>
 
-		<div class="my-4">
-			<p><strong>First name:</strong> <span th:text="${patient.firstname}"></span></p>
-			<p><strong>Last name:</strong> <span th:text="${patient.lastname}"></span></p>			
-		</div>
-		<a href="/patient/list" class="btn btn-primary">return to patient list</a>
-		<a href="/patient/update" class="btn btn-primary">Update patient</a>
-	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<form action="/patient/update/data" method="put">
+			<label for="firstname">First Name:</label>
+			<input type="text" id="firstname" name="firstname"><br><br>
+
+			<label for="lastname">Last Name:</label>
+			<input type="text" id="lastname" name="lastname"><br><br>
+
+			<label for="genre">Genre :</label>
+			<select id="genre" name="genre">
+				<option value="M">Masculin</option>
+				<option value="F">Féminin</option>
+			</select><br><br>
+
+			<label for="birthDay">Date of birth :</label>
+			<input type="date" id="birthDay" name="birthDay" required><br><br>
+
+			<label for="address">Address :</label>
+			<input type="text" id="address" name="address"><br><br>
+
+			<label for="phoneNumber">Phone number :</label>
+			<input type="text" id="phoneNumber" name="phoneNumber" pattern="^\d{3}-\d{3}-\d{4}$"
+				title="Le numéro de téléphone doit être au format 'XXX-XXX-XXXX'"><br><br>
+
+			<input type="submit" class="btn btn-primary" value="Update patient">
+			<a href="/patient/list" class="btn btn-primary">Return to patient list</a>
+		</form>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

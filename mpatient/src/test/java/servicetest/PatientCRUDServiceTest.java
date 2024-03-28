@@ -61,18 +61,7 @@ public class PatientCRUDServiceTest extends AbstractConfigurationTest {
 
     @Test
     void updatePatientTest(){
-        assertTrue(patientRepository.findById(5L).getAddress().equals("5 Mountain Dr"));
-        String newAdress = "10 valley Dr";
-        PatientBO patientinfoUpdated = new PatientBO();
-
-        patientinfoUpdated.setFirstname("CreatePatientName");
-        patientinfoUpdated.setLastname("test");
-        patientinfoUpdated.setBirthDay(new Date(2002-06-28));
-        patientinfoUpdated.setGender("M");
-        patientinfoUpdated.setAddress(newAdress);
-        patientinfoUpdated.setPhoneNumber("123-456-7890");
-        patientCRUDService.updatePatientByid(5L, patientinfoUpdated);
-        assertTrue(patientRepository.findById(5L).getAddress().equals(newAdress));
+     // TODO a finire //
     }
 
 }

@@ -1,5 +1,6 @@
 package com.mpatient.mpatient.service.impl;
 
+import com.mpatient.mpatient.businessmodel.PatientBO;
 import com.mpatient.mpatient.entity.PatientMO;
 import com.mpatient.mpatient.repositories.PatientRepository;
 import com.mpatient.mpatient.service.PatientService;
@@ -33,5 +34,9 @@ public class PatientServiceImpl implements PatientService {
                 .anyMatch(patient -> 
                     firstName.equals(patient.getFirstname()) && lastName.equals(patient.getLastname())
                 );
+    }
+    
+    public PatientMO getPatientByName(PatientBO patientBO) {
+    	return patientRepository.findByFirstnameAndLastname(patientBO.getFirstname(), patientBO.getLastname()); 
     }
 }

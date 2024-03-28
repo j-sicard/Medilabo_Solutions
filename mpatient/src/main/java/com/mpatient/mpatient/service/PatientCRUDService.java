@@ -15,5 +15,5 @@ public interface PatientCRUDService {
 
     public void SavePatient(PatientMO patientMO);
 
-    public void updatePatientByid(long patientId, PatientBO patientBO);
+    public void updatePatient(PatientMO patient, PatientBO patientBO);
 }

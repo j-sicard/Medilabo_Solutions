@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -57,10 +58,15 @@ public class FrontController {
 	
 
 	@GetMapping("/patient/update")
-	public String updatePatient(@RequestParam String firstname, @RequestParam String lastname, Model model) {
-		 PatientBean patient = microservicePatientsproxy.patient(firstname, lastname);     
-		 model.addAttribute("patient", patient);
+	public String updatePatient(Model model) {		    
+		 model.addAttribute("patient");
 		return "UpdatePatient";
 	}
 
+	@PutMapping("/patient/update/data")
+	public ResponseEntity<String> updateDataPatient(@RequestBody PatientBean patientBean) {
+		ResponseEntity<String> response = microservicePatientsproxy.updatePatient(patientBean);
+		return response;	
+	
+	}
 }

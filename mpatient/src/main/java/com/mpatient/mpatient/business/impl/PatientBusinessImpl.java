@@ -46,7 +46,7 @@ public class PatientBusinessImpl implements PatientBusiness {
         patientCRUDService.DeleteById(patientService.getIdByNames(firstname, lastname));
     }
 
-    public void updatePatientInfo(String firstname, String lastname, PatientBO patientBO){
-        patientCRUDService.updatePatientByid(patientService.getIdByNames(firstname, lastname), patientBO);
+    public void updatePatientInfo(PatientBO patientBO){  	
+    	patientCRUDService.updatePatient(patientService.getPatientByName(patientBO), patientBO);        
     }
 }

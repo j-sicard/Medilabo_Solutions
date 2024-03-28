@@ -46,10 +46,10 @@ public class PatientController {
         }
     }
 
-    @PutMapping("/patient/{firstname}/{lastname}")
-    public ResponseEntity<String> updatePatientInfo(@PathVariable String firstname, @PathVariable String lastname, @RequestBody PatientBO patientBO) {
+    @PutMapping("/patient/update")
+    public ResponseEntity<String> updatePatientInfo(@RequestBody PatientBO patientBO) {
         try {
-            patientBusiness.updatePatientInfo(firstname, lastname, patientBO);
+            patientBusiness.updatePatientInfo(patientBO);
             return ResponseEntity.ok("Patient information updated successfully.");
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Patient not found.");

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.mfront.front.beans.PatientBean;
@@ -22,7 +23,9 @@ public interface MicroservicePatientsproxy {
     
     @PostMapping(value = "/PatientRecord/create")
     ResponseEntity<String> addPatient(@RequestBody PatientBean patientBean);
-
+    
+    @PutMapping(value = "/PatientRecord/patient/update")
+    ResponseEntity<String> updatePatient(@RequestBody PatientBean patientBean);
    
     
 }
