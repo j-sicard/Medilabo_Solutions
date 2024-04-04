@@ -43,12 +43,14 @@ public class CommentController {
 	public String getPatIdByPatient(@PathVariable String patient) {
 		return commentPatientService.getCommentPatIdByPatient(patient);
 	}
-	
-	
-	
+		
 	@PostMapping(value = "new")
 	public void addNewCommentOfexistingPatient(@RequestBody CommentPatientMO newCommentPatient) {
 		commentBusinessService.addNewCommentOfexistingPatient(newCommentPatient);
 	}
-
+	
+	@GetMapping(value = "/patient/comment/{patient}")
+	public List<CommentPatientMO> getAllCommentOfOnePatient(@PathVariable String patient){
+		return commentPatientCRUDService.getcommentsOfpatient(patient);
+	}
 }

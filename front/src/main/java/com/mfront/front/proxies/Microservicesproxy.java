@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.mfront.front.beans.CommentBean;
 import com.mfront.front.beans.PatientBean;
 
 @FeignClient(name = "api-gateway", url = "localhost:8765")
-public interface MicroservicePatientsproxy {
+public interface Microservicesproxy {
 
     @GetMapping(value = "/MPATIENTS/PatientRecord/patients")
     List<PatientBean> listPatients();
@@ -26,5 +27,15 @@ public interface MicroservicePatientsproxy {
     
     @PutMapping(value = "/MPATIENTS/PatientRecord/patient/update")
     ResponseEntity<String> updatePatient(@RequestBody PatientBean patientBean);
- 
+    
+    // comment enpoint //
+
+	@GetMapping(value = "/MCOMMENTPATIENT/comment/patient/comment/{patient}")
+	public List<CommentBean> getAllCommentOfOnePatient(@PathVariable String patient); 
+	
+	@GetMapping(value = "/MCOMMENTPATIENT/comment/list")
+	public List<CommentBean> getAllComments();
+
+	@PostMapping(value = "/MCOMMENTPATIENT/comment/new" )
+	public void postNewComment(@RequestBody CommentBean commentBean);
 }

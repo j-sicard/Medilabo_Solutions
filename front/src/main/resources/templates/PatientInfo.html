@@ -2,29 +2,43 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>Patient Information</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Patient Information</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-	<div class="container">
-		<h1 class="text-center">Patient Information</h1>
+    <div class="container">   
+		<a href="/patient/list" class="btn btn-primary">return to patient list</a>    
+        <h1 class="text-center">Patient Information</h1>
+        <div class="my-4">
+            <p><strong>First name:</strong> <span th:text="${patient.firstname}"></span></p>
+            <p><strong>Last name:</strong> <span th:text="${patient.lastname}"></span></p>
+            <p><strong>birthDay:</strong> <span th:text="${patient.birthDay}"></span></p>
+            <p><strong>gender:</strong> <span th:text="${patient.gender}"></span></p>
+            <p><strong>address:</strong> <span th:text="${patient.address}"></span></p>
+            <p><strong>phone number:</strong> <span th:text="${patient.phoneNumber}"></span></p>
+        </div>    
 
-		<div class="my-4">
-			<p><strong>First name:</strong> <span th:text="${patient.firstname}"></span></p>
-			<p><strong>Last name:</strong> <span th:text="${patient.lastname}"></span></p>
-			<p><strong>birthDay:</strong> <span th:text="${patient.birthDay}"></span></p>
-			<p><strong>gender:</strong> <span th:text="${patient.gender}"></span></p>
-			<p><strong>address:</strong> <span th:text="${patient.address}"></span></p>
-			<p><strong>phone number:</strong> <span th:text="${patient.phoneNumber}"></span></p>
-		</div>
-		<a href="/patient/list" class="btn btn-primary">return to patient list</a>
-		</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>  
+    <div class="row">
+        <table class="table table-bordered" style="max-width: 1150px; margin: auto;">
+            <thead>
+                <tr>
+                    <th>comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="comments : ${comments}">
+                    <td th:text="${comments.note}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

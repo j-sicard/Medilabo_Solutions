@@ -13,20 +13,25 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.mfront.front.beans.CommentBean;
 import com.mfront.front.beans.PatientBean;
-import com.mfront.front.proxies.MicroservicePatientsproxy;
+import com.mfront.front.proxies.Microservicesproxy;
+import org.springframework.http.MediaType;
+
+
+
 
 @Controller
-public class FrontController {
+public class PatientController {
 
 	@Autowired
-	private MicroservicePatientsproxy microservicePatientsproxy;
+	private Microservicesproxy Microservicesproxy;
 
 	
 	@GetMapping("/patient/list")
 	  public String litsPatients(Model model)
 	  {
-		 List<PatientBean> patients =  microservicePatientsproxy.listPatients();
+		 List<PatientBean> patients =  Microservicesproxy.listPatients();
 		 model.addAttribute("patients", patients);		 
 	      return "ListPatients";
 	  }
@@ -39,8 +44,10 @@ public class FrontController {
 
 	@GetMapping("/patient/info")
 	public String showPatientInfo(@RequestParam String firstname, @RequestParam String lastname, Model model) {    
-	    PatientBean patient = microservicePatientsproxy.patient(firstname, lastname);     
+	    PatientBean patient = Microservicesproxy.patient(firstname, lastname); 
+	    List<CommentBean> comments = Microservicesproxy.getAllCommentOfOnePatient(firstname);
 	    model.addAttribute("patient", patient);
+	    model.addAttribute("comments",  comments); 
 	    return "patientInfo";
 	}
 
@@ -52,7 +59,7 @@ public class FrontController {
 	
 	@PostMapping("/patient/create")
 	public ResponseEntity<String> createPatient(@RequestBody PatientBean patientBean) {
-	    ResponseEntity<String> response = microservicePatientsproxy.addPatient(patientBean);	    
+	    ResponseEntity<String> response = Microservicesproxy.addPatient(patientBean);	    
 	    return response;
 	}
 	
@@ -65,10 +72,22 @@ public class FrontController {
 
 	@PutMapping("/patient/update/data")
 	public ResponseEntity<String> updateDataPatient(@RequestBody PatientBean patientBean) {
-		ResponseEntity<String> response = microservicePatientsproxy.updatePatient(patientBean);
-		return response;	
-	
+		ResponseEntity<String> response = Microservicesproxy.updatePatient(patientBean);
+		return response;		
 	}
+	
+	@GetMapping("/comment/add")
+	public String pageAddComment(Model model) {	 
+		return "AddComment"; 			
+		}
+	
+	@PostMapping(value = "/comment/add/data")
+	public String addCommentData(@RequestBody CommentBean commentBean) {
+		Microservicesproxy.postNewComment(commentBean);
+		return "confirmation";
+	}
+	
+	
 		
 	
 }

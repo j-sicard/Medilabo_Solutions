@@ -23,4 +23,8 @@ public class CommentPatientCRUDServiceImpl implements CommentPatientCRUDService{
 		commentRepository.insert(commentPatient);
 	}
 	
+	public List<CommentPatientMO> getcommentsOfpatient(String patient){
+		return commentRepository.findByPatient(patient); 
+	}
+	
 }

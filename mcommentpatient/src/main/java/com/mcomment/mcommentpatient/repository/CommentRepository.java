@@ -10,7 +10,9 @@ import com.mcomment.mcommentpatient.model.CommentPatientMO;
 
 public interface CommentRepository extends MongoRepository<CommentPatientMO, String> {
 
-	  @Query(value = "{ 'patient' : ?0 }", fields = "{ 'patId' : 1, '_id' : 0 }")
-	  List<String> findDistinctPatIdsByPatient(@Param("patient") String patient);
+	@Query(value = "{ 'patient' : ?0 }", fields = "{ 'patId' : 1, '_id' : 0 }")
+	List<String> findDistinctPatIdsByPatient(@Param("patient") String patient);
+
+	List<CommentPatientMO> findByPatient(String patient);
 
 }
