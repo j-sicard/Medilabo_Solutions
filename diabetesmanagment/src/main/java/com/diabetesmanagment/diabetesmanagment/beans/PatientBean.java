@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
-
+import java.time.LocalDate;
 import java.util.Date;
 
 public class PatientBean {
@@ -23,7 +23,7 @@ public class PatientBean {
     @NotNull(message = "Date of birth cannot be null.")
     @Past(message = "The date of birth must be in the past.")
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date birthDay;
+    private LocalDate birthDay;
 
     @NotNull(message = "Gender cannot be null.")
     @Pattern(regexp = "[MF]", message = "Gender must be 'M' for masculine or 'F' for feminine.")
@@ -39,7 +39,7 @@ public class PatientBean {
     public PatientBean() {
     }
 
-    public PatientBean(String firstname, String lastname, Date birthDay, String gender, String address, String phoneNumber) {
+    public PatientBean(String firstname, String lastname, LocalDate birthDay, String gender, String address, String phoneNumber) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.birthDay = birthDay;
@@ -64,11 +64,11 @@ public class PatientBean {
         this.lastname = lastname;
     }
 
-    public Date getBirthDay() {
+    public LocalDate getBirthDay() {
         return birthDay;
     }
 
-    public void setBirthDay(Date birthDay) {
+    public void setBirthDay(LocalDate birthDay) {
         this.birthDay = birthDay;
     }
 
