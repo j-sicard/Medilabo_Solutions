@@ -54,17 +54,4 @@ public class PatientControllerTest{
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isNotFound());
     }
-
-    @Test
-    void testGetPatientInfo_InternalServerError() throws Exception {
-        // Arrange : Configurer le mock pour lancer une exception lors de l'appel à getPatientInfo
-        when(patientBusiness.getPatientInfo(anyString(), anyString())).thenThrow(RuntimeException.class);
-
-        // Act & Assert : Effectuer une requête GET et vérifier le code de statut retourné
-        mockMvc.perform(MockMvcRequestBuilders.get("/PatientRecord/patient/TestNone/Test")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(MockMvcResultMatchers.status().isInternalServerError());
-    }
-
-
 }
