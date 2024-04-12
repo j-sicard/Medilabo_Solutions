@@ -37,5 +37,4 @@ public class PatientBusinessTest extends AbstractConfigurationTest {
     assertTrue(countBefore > countAfter);
     }
 
-
 }
