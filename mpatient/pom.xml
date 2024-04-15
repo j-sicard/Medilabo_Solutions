@@ -7,7 +7,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.4</version>
-		<relativePath /> 
+		<relativePath />
 	</parent>
 	<groupId>com.mpatient</groupId>
 	<artifactId>mpatient</artifactId>
@@ -63,10 +63,8 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 			<version>4.1.0</version>
 		</dependency>
-
-
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>

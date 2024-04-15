@@ -59,9 +59,4 @@ public class PatientCRUDServiceTest extends AbstractConfigurationTest {
         assertTrue(nameExistsAfter, "Patient name must exist in the list after creation");
     }
 
-    @Test
-    void updatePatientTest(){
-     // TODO a finire //
-    }
-
 }

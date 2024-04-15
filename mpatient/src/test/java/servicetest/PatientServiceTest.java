@@ -14,7 +14,7 @@ public class PatientServiceTest extends AbstractConfigurationTest {
     PatientService patientService;
 
     @Test
-    void getIdByNamesTest(){
+    void getIdByNamesTest(){    	
         assertTrue(patientService.getIdByNames("TestNone", "Test").equals(1L));
     }
 }

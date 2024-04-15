@@ -15,5 +15,11 @@ VALUES (4, 'TestEarlyOnset', 'Test', '2002-06-28', 'F', '4 Valley Dr', '400-555-
 INSERT IGNORE INTO users (user_id, username, password, role)
 VALUES(1, 'user', 'user', 'USER' );
 
+INSERT IGNORE INTO users (user_id, username, password, role)
+VALUES(2, 'user2', 'user', 'USER' );
+
+INSERT IGNORE INTO users (user_id, username, password, role)
+VALUES(3, 'user2', 'user', 'USER' );
+
 
 
