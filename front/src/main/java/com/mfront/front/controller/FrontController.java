@@ -16,22 +16,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.mfront.front.beans.CommentBean;
 import com.mfront.front.beans.PatientBean;
 import com.mfront.front.proxies.Microservicesproxy;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
 
 
 
 @Controller
-public class PatientController {
+public class FrontController {
 
 	@Autowired
-	private Microservicesproxy Microservicesproxy;
+	private Microservicesproxy microservicesproxy;
 
 	
 	@GetMapping("/patient/list")
 	  public String litsPatients(Model model)
 	  {
-		 List<PatientBean> patients =  Microservicesproxy.listPatients();
+		 List<PatientBean> patients =  microservicesproxy.listPatients();
 		 model.addAttribute("patients", patients);		 
 	      return "ListPatients";
 	  }
@@ -44,9 +46,11 @@ public class PatientController {
 
 	@GetMapping("/patient/info")
 	public String showPatientInfo(@RequestParam String firstname, @RequestParam String lastname, Model model) {    
-	    PatientBean patient = Microservicesproxy.patient(firstname, lastname); 
-	    List<CommentBean> comments = Microservicesproxy.getAllCommentOfOnePatient(firstname);
+	    PatientBean patient = microservicesproxy.patient(firstname, lastname); 
+	    String risk = microservicesproxy.getRiskLevels(firstname, lastname);
+	    List<CommentBean> comments = microservicesproxy.getAllCommentOfOnePatient(firstname);
 	    model.addAttribute("patient", patient);
+	    model.addAttribute("risk", risk); 
 	    model.addAttribute("comments",  comments); 
 	    return "patientInfo";
 	}
@@ -59,7 +63,7 @@ public class PatientController {
 	
 	@PostMapping("/patient/create")
 	public ResponseEntity<String> createPatient(@RequestBody PatientBean patientBean) {
-	    ResponseEntity<String> response = Microservicesproxy.addPatient(patientBean);	    
+	    ResponseEntity<String> response = microservicesproxy.addPatient(patientBean);	    
 	    return response;
 	}
 	
@@ -72,7 +76,7 @@ public class PatientController {
 
 	@PutMapping("/patient/update/data")
 	public ResponseEntity<String> updateDataPatient(@RequestBody PatientBean patientBean) {
-		ResponseEntity<String> response = Microservicesproxy.updatePatient(patientBean);
+		ResponseEntity<String> response = microservicesproxy.updatePatient(patientBean);
 		return response;		
 	}
 	
@@ -82,12 +86,12 @@ public class PatientController {
 		}
 	
 	@PostMapping(value = "/comment/add/data")
-	public String addCommentData(@RequestBody CommentBean commentBean) {
-		Microservicesproxy.postNewComment(commentBean);
-		return "confirmation";
-	}
-	
-	
-		
-	
+    public ResponseEntity<String> addCommentData(@RequestBody CommentBean commentBean) {
+        try {          
+            microservicesproxy.postNewComment(commentBean);       
+            return ResponseEntity.ok("Comment added successfully");
+        } catch (Exception e) {          
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add comment: " + e.getMessage());
+        }
+    }
 }

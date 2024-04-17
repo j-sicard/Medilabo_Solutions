@@ -51,14 +51,14 @@
             contentType: "application/json",
             url: "/patient/create",
             data: JSON.stringify(formData),
-            dataType: 'json',
+            
             success: function (data) {
                 console.log('Success:', data);
-                $("#responseMessage").removeClass("alert-danger").addClass("alert-success").text(data).show();
+                alert("Patient added successfully!");
             },
             error: function (error) {
                 console.error('Error:', error);
-                $("#responseMessage").removeClass("alert-success").addClass("alert-danger").text(error.responseJSON.message).show();
+               alert("Failed to add patient. Please try again later.");
             }
         });
     }

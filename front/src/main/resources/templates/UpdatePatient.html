@@ -63,9 +63,11 @@
                 contentType: 'application/json', 
                 success: function (response) {                   
                     console.log(response);
+                    alert("Patient updated successfully!");
                 },
                 error: function (xhr, status, error) {                   
                     console.error(xhr.responseText);
+                     alert("Failed to updated patient. Please try again later.");
                 }
             });
         });
