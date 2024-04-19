@@ -11,6 +11,16 @@ public interface BusinessService {
 	
 	public List<CommentPatientBean> getAllNoteOffOnePatient(String patient);	
 	
-	public String getRiskLevels(String firstname, String lastname); 	
+	public String getRiskLevels(Boolean agechecker, int occurenceCount, PatientBean patient);
+	
+	public int occurenceCount(String note); 
+	
+	public String mergeNotes(List<String> listNote);
+	
+	public List<CommentPatientBean> getAllCommentForOnePatient(String firstname); 
+	
+	public PatientBean getPatientInfo(String firstname, String lastname); 
+	
+	public Boolean ageChecker(PatientBean patient); 
 
 }

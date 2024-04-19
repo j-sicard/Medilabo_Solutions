@@ -3,6 +3,7 @@ package com.diabetesmanagment.diabetesmanagment.verification;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,12 +27,14 @@ public class VerificationServiceTest {
 	VerificationService verificationService; 
 	
 	@Test
-	void moreThirtyYearsOldTest() {
-	    LocalDate birthDate = LocalDate.of(1981, 4, 6); 
-	    Boolean ifageismorethirty = verificationService.ageChecker(birthDate, 30);
-	    
-	    assertTrue(ifageismorethirty); 
+	void agecheckerreturntrueTest() {	    
+	    assertTrue( verificationService.ageChecker(LocalDate.of(1981, 4, 6), 30).equals(true)); 
 	}
+	
+	@Test
+	void agecheckerreturnfalseTest() {	    
+	    assertTrue(verificationService.ageChecker(LocalDate.of(2020, 4, 6), 30).equals(false)); 
+	}	
 	
 	@Test
 	void forLevelRisqueNoneReturnTrueTest() {		
@@ -41,8 +44,7 @@ public class VerificationServiceTest {
 	@Test
 	void forLevelRisqueNoneReturnfalseTest() {		
 		assertTrue(verificationService.forLevelRisqueNone(1).equals(false)); 
-	}
-	
+	}	
 	
 	@Test
 	void forLevelRisqueBorderlineReturnTrueWiththreeOccurenceTest() {		
@@ -87,14 +89,14 @@ public class VerificationServiceTest {
 	void forLevelRisqueDangerReturnTrueForSixOccurenceTest() {
 		PatientBean patient = new PatientBean(); 
 		patient.setGender("F");
-		assertTrue(verificationService.forLevelRisqueDanger(6, patient, false).equals(true)) ; 
+		assertTrue(verificationService.forLevelRisqueDanger(6, patient, true).equals(true)) ; 
 	}
 	
 	@Test
 	void forLevelRisqueDangerReturnTrueForSevenOccurenceTest() {
 		PatientBean patient = new PatientBean(); 
 		patient.setGender("F");
-		assertTrue(verificationService.forLevelRisqueDanger(7, patient, false).equals(true)) ; 
+		assertTrue(verificationService.forLevelRisqueDanger(7, patient, true).equals(true)) ; 
 	}
 	
 	@Test
@@ -115,7 +117,7 @@ public class VerificationServiceTest {
 	void forLevelRisqueEarlyOnsetReturnTrueForWomenAndFourOccurenceTest() {
 		PatientBean patient = new PatientBean(); 
 		patient.setGender("F");
-		assertTrue(verificationService.forLevelRisqueEarlyOnset(4, patient, false).equals(true));
+		assertTrue(verificationService.forLevelRisqueEarlyOnset(7, patient, false).equals(true));
 	}
 	
 	@Test

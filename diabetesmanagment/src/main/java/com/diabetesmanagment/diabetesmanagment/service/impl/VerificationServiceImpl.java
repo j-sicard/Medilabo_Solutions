@@ -2,6 +2,7 @@ package com.diabetesmanagment.diabetesmanagment.service.impl;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.logging.Logger;
 
 import org.springframework.stereotype.Service;
 
@@ -10,24 +11,24 @@ import com.diabetesmanagment.diabetesmanagment.service.VerificationService;
 
 @Service
 public class VerificationServiceImpl implements VerificationService {
+	
+	private static final Logger logger = Logger.getLogger(VerificationServiceImpl.class.getName());
+
 
 	public static int calculateAge(LocalDate birthDate) {
-
 		LocalDate currentDate = LocalDate.now();
-
 		Period period = Period.between(birthDate, currentDate);
-
 		int age = period.getYears();
-
+		logger.info("Age patient: " + age);
 		return age;
-
 	}
 
 	public Boolean ageChecker(LocalDate birthDate, int ageToCheck) {
-
 		if (VerificationServiceImpl.calculateAge(birthDate) >= ageToCheck) {
+			logger.info("AgeChecker return TRUE");
 			return true;
 		}
+		logger.info("AgeChecker return FALSE");
 		return false;
 	}
 
@@ -52,7 +53,9 @@ public class VerificationServiceImpl implements VerificationService {
 			}
 			if (patient.getGender().equals("F") && occurenceCount == 4) {
 				return true;
-			}		
+			}			
+		}
+		if(ageChecker) {
 			if (occurenceCount >= 6 && occurenceCount <= 7) {
 				return true;
 			}
@@ -60,20 +63,19 @@ public class VerificationServiceImpl implements VerificationService {
 		return false;
 	}
 
+
 	public Boolean forLevelRisqueEarlyOnset(int occurenceCount, PatientBean patient, Boolean ageChecker) {
 		if (!ageChecker) {
 			if (patient.getGender().equals("H") && occurenceCount == 5) {
 				return true;
 			}
-			if (patient.getGender().equals("F") && occurenceCount == 4) {
+			if (patient.getGender().equals("F") && occurenceCount == 7) {
 				return true;
-			}
-	
+			}	
 			if (occurenceCount >= 8) {
 				return true;
 			}
 		}
 		return false;
 	}
-
 }

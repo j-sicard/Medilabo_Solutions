@@ -28,21 +28,6 @@ public class CommentController {
 	
 	@Autowired
 	CommentBusinessService commentBusinessService; 
-
-	@GetMapping(value = "/list")
-	public List<CommentPatientMO> getAllComments() {
-		return commentPatientCRUDService.getAllComment();
-	}
-
-	@PostMapping(value = "/insert")
-	public void instertcomment(@RequestBody CommentPatientMO commentPatientMO) {
-		commentPatientCRUDService.addcomments(commentPatientMO);
-	}
-
-	@GetMapping(value = "/patID/{patient}")
-	public String getPatIdByPatient(@PathVariable String patient) {
-		return commentPatientService.getCommentPatIdByPatient(patient);
-	}
 		
 	@PostMapping(value = "new")
 	public void addNewCommentOfexistingPatient(@RequestBody CommentPatientMO newCommentPatient) {

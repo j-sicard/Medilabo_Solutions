@@ -1,0 +1,34 @@
+version: '1.0'
+
+services:
+  service1:
+    image: eurekaserveur
+    ports:
+      - "8761:8761" 
+      
+  service2:
+    image: apigateway
+    ports:
+      - "8765:8765" 
+      
+  service3:
+    image: mpatient
+    ports:
+      - "9001:9001"
+        
+  service4:
+    image: mcommentpatient
+    ports:
+      - "9002:9002"  
+   
+  service5:
+    image: diabetesmanagement
+    ports:
+      - "9003:9003"
+      
+  service6:
+    image: front
+    ports:
+      - "8080:8080"
+      
+       

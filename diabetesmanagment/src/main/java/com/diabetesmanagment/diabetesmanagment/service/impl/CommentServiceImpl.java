@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,9 +21,8 @@ public class CommentServiceImpl implements CommentService {
 	@Autowired
 	McommentProxy mcommentProxy;
 	
-	String[] termsToCheck = { "Hémoglobine A1C", "Microalbumine", "Taille", "Poids", "Fumeur", "Fumeuse", "Anormal",
-			"Cholestérol", "Vertiges", "Rechute", "Réaction", "Anticorps" };
-	
+	private static final Logger logger = Logger.getLogger(CommentServiceImpl.class.getName());
+
 
 	public List<CommentPatientBean> getAllCommentForOnePatient(String Patient) {
 		return mcommentProxy.findAllCommentOfOnePatient(Patient);
@@ -40,35 +40,32 @@ public class CommentServiceImpl implements CommentService {
 		return mergedNotes.toString();
 	}
 
+	private String normalizeTerm(String term) {
+		return term.replaceAll("é", "e").toLowerCase();
+	}
 
+	public int countUniqueTerms(String note, String[] termsToCheck) {
+		Map<String, Integer> uniqueTerms = new HashMap<>();
 
-	   private String normalizeTerm(String term) {	      
-	        return term.replaceAll("é", "e").toLowerCase();
-	    }
+		// Normaliser la chaîne en forme NFD et retirer les caractères diacritiques
+		note = Normalizer.normalize(note, Normalizer.Form.NFD).replaceAll("\\p{InCombiningDiacriticalMarks}+", "")
+				.replaceAll("[^a-zA-Z0-9\\s]", "").toLowerCase();
 
-	    public int countUniqueTerms(String note, String[] termsToCheck) {
-	        Map<String, Integer> uniqueTerms = new HashMap<>();
+		// Diviser la note en mots
+		String[] words = note.split("\\s+");
 
-	        // Normaliser la chaîne en forme NFD et retirer les caractères diacritiques
-	        note = Normalizer.normalize(note, Normalizer.Form.NFD)
-	                         .replaceAll("\\p{InCombiningDiacriticalMarks}+", "")
-	                         .replaceAll("[^a-zA-Z0-9\\s]", "")
-	                         .toLowerCase();	    
-
-	        // Diviser la note en mots
-	        String[] words = note.split("\\s+");
-
-	        // Vérifier chaque terme dans la liste des termes à vérifier
-	        for (String term : termsToCheck) {
-	            String normalizedTerm = normalizeTerm(term);
-	            for (String word : words) {	                
-	                if (word.equals(normalizedTerm)) {
-	                    uniqueTerms.put(term, uniqueTerms.getOrDefault(term, 0) + 1);
-	                    System.out.println("Mot trouvé : " + term);
-	                    break;
-	                }
-	            }
-	        }
-	        return uniqueTerms.size();
-	    }
+		// Vérifier chaque terme dans la liste des termes à vérifier
+		for (String term : termsToCheck) {
+			String normalizedTerm = normalizeTerm(term);
+			for (String word : words) {
+				if (word.equals(normalizedTerm)) {
+					uniqueTerms.put(term, uniqueTerms.getOrDefault(term, 0) + 1);
+					 System.out.println("Mot trouvé : " + term);
+					break;
+				}
+			}
+		}
+		logger.info("Count Terms: " + uniqueTerms.size());
+		return uniqueTerms.size();
+	}
 }
