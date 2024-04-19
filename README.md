@@ -11,10 +11,12 @@ suggestions d’actions à mener pour appliquer le Green Code à ce projet :
 Green Coding : Pour un Développement Informatique Plus Écologique
 Dans un monde de plus en plus connecté, la digitalisation de nos vies a des répercussions sur l'environnement souvent ignorées. Les pratiques de développement informatique ont un impact significatif sur la consommation d'énergie et les émissions de CO2. Pour contrer cette tendance, le Green Coding émerge comme une solution prometteuse. Dans cet exposé, nous explorerons en détail le concept du Green Coding, ses enjeux, ses principes et ses avantages.
 
-Les Enjeux Écologiques
+Les Enjeux Écologiques:
+
 L'essor de l'informatique et d'internet a entraîné une hausse significative de la consommation énergétique et des émissions de CO2. Par exemple, l'informatique est responsable de 3,7% de l'empreinte carbone mondiale, dépassant même les émissions du transport aérien commercial. Face à cette réalité, le Green Coding vise à réduire l'impact environnemental du développement logiciel.
 
-Le Principe du Green Coding
+Le Principe du Green Coding:
+
 Le Green Coding consiste à adopter des pratiques de développement informatique visant à rendre le code et les produits numériques plus écologiques. Cela va au-delà du simple code source et englobe l'ensemble du processus de développement, y compris le choix des technologies, l'optimisation du code et l'hébergement des applications.
 
 Avantages du Green Coding
