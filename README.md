@@ -6,9 +6,7 @@ Cette application a été développée pour aider à détecter le diabète de ty
 ![4](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/7c1e5c75-cd1f-4f14-8c1d-5830c95db695)
 
 
-suggestions d’actions à mener pour appliquer le Green Code à ce projet : 
-
-Le Principe du Green Coding:
+Avant de proposer des suggestions pour améliorer l'application du point de vue du green code, commençons par définir ce concept : le green code. 
 
 Le Green Coding consiste à adopter des pratiques de développement informatique visant à rendre le code et les produits numériques plus écologiques. Cela va au-delà du simple code source et englobe l'ensemble du processus de développement, y compris le choix des technologies, l'optimisation du code et l'hébergement des applications.
 
