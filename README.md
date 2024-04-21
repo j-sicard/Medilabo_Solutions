@@ -25,3 +25,23 @@ Pour pratiquer le Green Coding, plusieurs techniques peuvent être mises en œuv
 - Choix d'un hébergeur utilisant des sources d'énergie renouvelable et des serveurs proches des utilisateurs.
 
 En conclusion, le Green Coding offre une approche prometteuse pour réduire l'impact environnemental du développement logiciel. En adoptant des pratiques écologiques dès le stade de la conception, les entreprises peuvent contribuer à la transition vers un numérique plus durable et responsable.
+
+Suggestions d’actions à mener pour appliquer le Green Code à ce projet:
+
+Je propose une stratégie de consolidation des microservices pour optimiser notre application, dans une perspective de green code.
+En regroupant les fonctionnalités des microservices de gestion des commentaires et d'étude du risque de diabète dans celui de la gestion des patients, 
+nous simplifions l'architecture et réduisons le volume global de l'application. Cette consolidation nous permettra de limiter le nombre de requêtes HTTP entre les services, 
+ce qui améliorera non seulement les performances de l'application, mais également son empreinte écologique en réduisant la consommation de ressources informatiques.
+
+Pour simplifier la gestion des données, nous utiliserons une seule base de données MySQL avec plusieurs tables pour stocker les informations nécessaires.
+Cette approche garantit une gestion efficace des données tout en réduisant la complexité de l'infrastructure, ce qui contribue à une utilisation plus durable des ressources.
+
+En éliminant le serveur Eureka et l'API Gateway, nous simplifions davantage l'architecture, ce qui réduit la charge de travail des serveurs et la consommation d'énergie nécessaire à leur fonctionnement.
+
+Nous maintiendrons un service front-end distinct pour garantir que l'application reste stateless, facilitant ainsi la gestion et la mise à l'échelle des serveurs, 
+tout en conservant une approche écologiquement responsable.
+
+Cette approche nous permettra de réduire significativement le volume de l'application et le nombre de requêtes entre les services,
+tout en maintenant des performances optimales dans le cadre d'une démarche de développement durable.
+
+
