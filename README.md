@@ -10,14 +10,12 @@ Avant de proposer des suggestions pour améliorer l'application du point de vue 
 
 Le Green Coding consiste à adopter des pratiques de développement informatique visant à rendre le code et les produits numériques plus écologiques. Cela va au-delà du simple code source et englobe l'ensemble du processus de développement, y compris le choix des technologies, l'optimisation du code et l'hébergement des applications.
 
-Avantages du Green Coding
 Le Green Coding présente plusieurs avantages significatifs :
 
 Réduction des coûts à long terme grâce à une moindre consommation d'énergie et de bande passante.
 Amélioration des performances des applications grâce à un code optimisé.
 Simplification de la maintenance du code.
 Amélioration de la réputation de l'entreprise en tant qu'acteur soucieux de l'environnement.
-Techniques de Green Coding
 
 Pour pratiquer le Green Coding, plusieurs techniques peuvent être mises en œuvre :
 
@@ -26,5 +24,4 @@ Pour pratiquer le Green Coding, plusieurs techniques peuvent être mises en œuv
 - Optimisation du stockage des données côté serveur et client pour réduire l'espace nécessaire.
 - Choix d'un hébergeur utilisant des sources d'énergie renouvelable et des serveurs proches des utilisateurs.
 
-Conclusion
 En conclusion, le Green Coding offre une approche prometteuse pour réduire l'impact environnemental du développement logiciel. En adoptant des pratiques écologiques dès le stade de la conception, les entreprises peuvent contribuer à la transition vers un numérique plus durable et responsable.
