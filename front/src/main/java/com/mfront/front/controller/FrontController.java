@@ -73,11 +73,7 @@ public class FrontController {
 		ResponseEntity<String> response = microservicesproxy.updatePatient(patientBean);
 		return response;		
 	}
-	
-	@GetMapping("/comment/add")
-	public String pageAddComment(Model model) {	 
-		return "AddComment"; 			
-		}
+		
 	
 	@PostMapping(value = "/comment/add/data")
     public ResponseEntity<String> addCommentData(@RequestBody CommentBean commentBean) {
