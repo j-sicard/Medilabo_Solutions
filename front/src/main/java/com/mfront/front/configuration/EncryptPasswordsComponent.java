@@ -1,5 +1,6 @@
 package com.mfront.front.configuration;
 
+/*
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -47,4 +48,4 @@ public class EncryptPasswordsComponent {
 		return password.startsWith("$2a$");
 	}
 }
-
+*/

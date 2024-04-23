@@ -38,17 +38,11 @@ public class FrontController {
 	      return "ListPatients";
 	  }
 	   
-	@GetMapping("/patient/search")
-	public String gestionPatient(Model model) {
-		model.addAttribute("patients");
-		return "PatientSearch";
-	}
-
-	@GetMapping("/patient/info")
-	public String showPatientInfo(@RequestParam String firstname, @RequestParam String lastname, Model model) {    
+	@GetMapping("/patient/info/{firstname}/{lastname}")
+	public String showPatientInfo(@PathVariable String firstname, @PathVariable String lastname, Model model) {    
 	    PatientBean patient = microservicesproxy.patient(firstname, lastname); 
 	    String risk = microservicesproxy.getRiskLevels(firstname, lastname);
-	    List<CommentBean> comments = microservicesproxy.getAllCommentOfOnePatient(firstname);
+	    List<CommentBean> comments = microservicesproxy.getAllCommentOfOnePatient(lastname);
 	    model.addAttribute("patient", patient);
 	    model.addAttribute("risk", risk); 
 	    model.addAttribute("comments",  comments); 
