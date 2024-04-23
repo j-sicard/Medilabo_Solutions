@@ -10,7 +10,11 @@
 
 <body>
 	<div class="container">
-		<a href="/patient/list" class="btn btn-primary">return to patient list</a>
+		<a href="/patient/list" class="btn btn-success">return to patient list</a>					
+			<a th:href="@{/patient/update/{firstname}/{lastname}(firstname=${patient.firstname}, lastname=${patient.lastname})}"
+   class="btn btn-primary">Update patient</a>
+					
+		
 		<h1 class="text-center">Patient Information</h1>
 		<div class="my-4">
 			<p><strong>First name:</strong> <span th:text="${patient.firstname}"></span></p>
@@ -25,8 +29,7 @@
 	<div class="container" style="margin-bottom: 10px;">
 	<form id="commentForm">
     <input type="hidden" id="lastName" name="lastName" th:value="${patient.lastname}">
-    <div class="form-group">
-        <label for="note">Notes :</label>
+    <div class="form-group">        
         <textarea class="form-control" id="note" name="note" rows="3" placeholder="Add new notes ..." required></textarea>
     </div>
     <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
@@ -37,7 +40,7 @@
 		<table class="table table-bordered" style="max-width: 1150px; margin: auto;">
 			<thead>
 				<tr>
-					<th>comment</th>
+					<th>Notes</th>
 				</tr>
 			</thead>
 			<tbody>

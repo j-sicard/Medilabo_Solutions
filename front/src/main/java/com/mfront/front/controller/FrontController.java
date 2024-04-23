@@ -62,11 +62,12 @@ public class FrontController {
 	}
 	
 
-	@GetMapping("/patient/update")
-	public String updatePatient(Model model) {		    
-		 model.addAttribute("patient");
+	@GetMapping("/patient/update/{firstname}/{lastname}")
+	public String updatePatient(@PathVariable String firstname, @PathVariable String lastname, Model model) {
+		PatientBean patient = microservicesproxy.patient(firstname, lastname); 
+		model.addAttribute("patient", patient);
 		return "UpdatePatient";
-	}
+	} 
 
 	@PutMapping("/patient/update/data")
 	public ResponseEntity<String> updateDataPatient(@RequestBody PatientBean patientBean) {

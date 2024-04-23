@@ -14,30 +14,31 @@
 
         <form id="updateForm" action="/patient/update/data" method="POST">
             <input type="hidden" name="_method" value="PUT">
+            <!-- Utilisez th:value pour pré-remplir les champs -->
             <label for="firstname">First Name:</label>
-            <input type="text" id="firstname" name="firstname"><br><br>
+            <input type="text" id="firstname" name="firstname" th:value="${patient.firstname}"><br><br>
 
             <label for="lastname">Last Name:</label>
-            <input type="text" id="lastname" name="lastname"><br><br>
+            <input type="text" id="lastname" name="lastname" th:value="${patient.lastname}"><br><br>
 
-            <label for="genre">Genre :</label>
-            <select id="genre" name="genre">
-                <option value="M">Masculin</option>
-                <option value="F">Féminin</option>
+            <label for="gender">Genre :</label>
+            <select id="gender" name="gender">
+                <option value="M" th:selected="${patient.gender == 'M'}">Masculin</option>
+                <option value="F" th:selected="${patient.gender == 'F'}">Féminin</option>
             </select><br><br>
 
             <label for="birthDay">Date of birth :</label>
-            <input type="date" id="birthDay" name="birthDay" required><br><br>
+            <input type="date" id="birthDay" name="birthDay" th:value="${patient.birthDay}" required><br><br>
 
             <label for="address">Address :</label>
-            <input type="text" id="address" name="address"><br><br>
+            <input type="text" id="address" name="address" th:value="${patient.address}"><br><br>
 
             <label for="phoneNumber">Phone number :</label>
             <input type="text" id="phoneNumber" name="phoneNumber" pattern="^\d{3}-\d{3}-\d{4}$"
-                title="Le numéro de téléphone doit être au format 'XXX-XXX-XXXX'"><br><br>
+                title="Le numéro de téléphone doit être au format 'XXX-XXX-XXXX'" th:value="${patient.phoneNumber}"><br><br>
 
             <input type="submit" class="btn btn-primary" value="Update patient">
-            <a href="/patient/list" class="btn btn-primary">Return to patient list</a>
+            <a href="/patient/list" class="btn btn-success">Return to patient list</a>
         </form>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -51,7 +52,7 @@
             var formData = {
                 firstname: $('#firstname').val(),
                 lastname: $('#lastname').val(),
-                genre: $('#genre').val(),
+                genre: $('#gender').val(),
                 birthDay: $('#birthDay').val(),
                 address: $('#address').val(),
                 phoneNumber: $('#phoneNumber').val()
