@@ -1,0 +1,9 @@
+com.mpatient.mpatient
+com.mpatient.mpatient.business
+com.mpatient.mpatient.business.impl
+com.mpatient.mpatient.businessmodel
+com.mpatient.mpatient.controller
+com.mpatient.mpatient.entity
+com.mpatient.mpatient.repositories
+com.mpatient.mpatient.service
+com.mpatient.mpatient.service.impl
