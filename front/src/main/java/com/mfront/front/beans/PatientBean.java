@@ -2,6 +2,7 @@ package com.mfront.front.beans;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
@@ -10,6 +11,9 @@ import jakarta.validation.constraints.Size;
 
 import java.util.Date;
 
+/**
+ * Bean class representing a patient.
+ */
 public class PatientBean {
     
     @Size(max = 50, message = "The first name cannot exceed 50 characters.")
@@ -20,9 +24,9 @@ public class PatientBean {
     @Pattern(regexp = "^[a-zA-Z]*$", message = "The last name can only contain letters.")
     private String lastname;
 
-    @NotNull(message = "Date of birth cannot be null.")
-    @Past(message = "The date of birth must be in the past.")
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @NotNull(message = "Date of birth cannot be zero.")
+    @Past(message = "The date of birth must be in the past.")   
+    @JsonFormat(pattern = "yyyy-MM-dd")    
     private Date birthDay;
 
     @NotNull(message = "Gender cannot be null.")

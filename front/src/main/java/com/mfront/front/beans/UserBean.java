@@ -2,6 +2,9 @@ package com.mfront.front.beans;
 
 import jakarta.validation.constraints.NotBlank;
 
+/**
+ * Bean class representing a user.
+ */
 public class UserBean {
   
     private Integer userId;

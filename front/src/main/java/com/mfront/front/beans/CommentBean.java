@@ -1,5 +1,8 @@
 package com.mfront.front.beans;
 
+/**
+ * Bean class representing a comment.
+ */
 public class CommentBean {
 	
 	private String patId;

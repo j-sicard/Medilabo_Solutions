@@ -15,13 +15,21 @@ import org.springframework.stereotype.Service;
 import com.mfront.front.beans.UserBean;
 import com.mfront.front.proxies.Microservicesproxy;
 
+/**
+ * Custom user details service for Spring Security authentication.
+ */
 @Service
 public class CustomUserDetailsService  implements UserDetailsService {
 
 	   @Autowired
 	    private Microservicesproxy microservicesproxy;
 
-	    
+	   /**
+	     * Load user details by username.
+	     * @param username the username of the user to load
+	     * @return UserDetails object representing the user
+	     * @throws UsernameNotFoundException if the user is not found
+	     */
 	    @Override
 	    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 	      
@@ -33,7 +41,11 @@ public class CustomUserDetailsService  implements UserDetailsService {
 	    }
 
 
-	
+	    /**
+	     * Get the granted authorities for a user based on their role.
+	     * @param role the role of the user
+	     * @return list of granted authorities
+	     */
 	    private List<GrantedAuthority> getGrantedAuthorities(String role) {
 	        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 	   

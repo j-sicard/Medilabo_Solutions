@@ -19,7 +19,7 @@
 		<div class="my-4">
 			<p><strong>First name:</strong> <span th:text="${patient.firstname}"></span></p>
 			<p><strong>Last name:</strong> <span th:text="${patient.lastname}"></span></p>
-			<p><strong>birthDay:</strong> <span th:text="${patient.birthDay}"></span></p>
+			<p><strong>birthDay:</strong> <span th:text="${#dates.format(patient.birthDay, 'dd-MM-yyyy')}"></span></p>
 			<p><strong>gender:</strong> <span th:text="${patient.gender}"></span></p>
 			<p><strong>address:</strong> <span th:text="${patient.address}"></span></p>
 			<p><strong>phone number:</strong> <span th:text="${patient.phoneNumber}"></span></p>
