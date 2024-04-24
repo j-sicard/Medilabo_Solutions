@@ -69,6 +69,13 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 			<version>3.2.4</version>
 		</dependency> 
+			<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>3.6.3</version>
+			<type>maven-plugin</type>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -77,6 +84,14 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+            	<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-javadoc-plugin</artifactId>
+            	<version>3.6.3</version>
+            	<configuration>
+               		<reportOutputDirectory>${project.basedir}/javadoc</reportOutputDirectory>
+            	</configuration>
+        	</plugin>
 		</plugins>
 	</build>
 

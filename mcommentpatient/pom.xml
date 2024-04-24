@@ -39,13 +39,18 @@
 			<artifactId>json</artifactId>
 			<version>20240303</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 			<version>4.1.0</version>
 		</dependency>
-	
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>3.6.3</version>
+			<type>maven-plugin</type>
+		</dependency>
 
 	</dependencies>
 
@@ -55,10 +60,18 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+            	<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-javadoc-plugin</artifactId>
+            	<version>3.6.3</version>
+            	<configuration>
+               		<reportOutputDirectory>${project.basedir}/javadoc</reportOutputDirectory>
+            	</configuration>
+        	</plugin>
 		</plugins>
 	</build>
-	
-		<repositories>
+
+	<repositories>
 		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>

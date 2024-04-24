@@ -1,0 +1,8 @@
+com.mcomment.mcommentpatient
+com.mcomment.mcommentpatient.business
+com.mcomment.mcommentpatient.business.impl
+com.mcomment.mcommentpatient.controller
+com.mcomment.mcommentpatient.model
+com.mcomment.mcommentpatient.repository
+com.mcomment.mcommentpatient.service
+com.mcomment.mcommentpatient.service.impl

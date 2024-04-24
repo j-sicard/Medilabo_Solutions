@@ -1,0 +1,8 @@
+com.diabetesmanagment.diabetesmanagment.beans
+com.diabetesmanagment.diabetesmanagment.business
+com.diabetesmanagment.diabetesmanagment.business.impl
+com.diabetesmanagment.diabetesmanagment.controller
+com.diabetesmanagment.diabetesmanagment
+com.diabetesmanagment.diabetesmanagment.proxies
+com.diabetesmanagment.diabetesmanagment.service
+com.diabetesmanagment.diabetesmanagment.service.impl
