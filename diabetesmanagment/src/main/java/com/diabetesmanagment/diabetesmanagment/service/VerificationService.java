@@ -4,6 +4,9 @@ import java.time.LocalDate;
 
 import com.diabetesmanagment.diabetesmanagment.beans.PatientBean;
 
+/**
+ * Service interface for verifying patient information and determining risk levels.
+ */
 public interface VerificationService {
 
 	public Boolean ageChecker(LocalDate  birthDate, int ageToCheck); 

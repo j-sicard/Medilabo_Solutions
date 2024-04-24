@@ -2,6 +2,9 @@ package com.mpatient.mpatient.businessmodel;
 
 import java.util.Date;
 
+/**
+ * Business object representing a patient.
+ */
 public class PatientBO {
 
     private String firstname;

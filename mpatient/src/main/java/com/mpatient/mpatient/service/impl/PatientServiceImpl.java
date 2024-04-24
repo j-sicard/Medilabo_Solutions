@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 import java.util.stream.StreamSupport;
 
-
+/**
+ * Implementation of the PatientService interface.
+ */
 @Service
 public class PatientServiceImpl implements PatientService {
 
@@ -18,6 +20,13 @@ public class PatientServiceImpl implements PatientService {
     PatientRepository patientRepository;
 
 
+    /**
+     * Get the ID of a patient by their first name and last name.
+     *
+     * @param firstName The first name of the patient.
+     * @param lastName  The last name of the patient.
+     * @return The ID of the patient, or null if not found.
+     */
     public Long getIdByNames(String firstName, String lastName) {
         Optional<PatientMO> matchingPatient = StreamSupport.stream(patientRepository.findAll().spliterator(), false)
                 .filter(patient -> patient.getFirstname().equals(firstName) && patient.getLastname().equals(lastName))
@@ -26,6 +35,13 @@ public class PatientServiceImpl implements PatientService {
         return matchingPatient.map(PatientMO::getPatientID).orElse(null);
     }
 
+    /**
+     * Check if a patient exists by their first name and last name.
+     *
+     * @param firstName The first name of the patient.
+     * @param lastName  The last name of the patient.
+     * @return True if the patient exists, false otherwise.
+     */
     public boolean patientExists(String firstName, String lastName) {
         if (firstName == null || lastName == null) {
             return false;       }
@@ -36,6 +52,12 @@ public class PatientServiceImpl implements PatientService {
                 );
     }
     
+    /**
+     * Get a patient by their first name and last name.
+     *
+     * @param patientBO The patient business object containing the first name and last name.
+     * @return The patient matching the given first name and last name.
+     */
     public PatientMO getPatientByName(PatientBO patientBO) {
     	return patientRepository.findByFirstnameAndLastname(patientBO.getFirstname(), patientBO.getLastname()); 
     }

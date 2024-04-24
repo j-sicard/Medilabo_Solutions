@@ -17,17 +17,33 @@ import com.diabetesmanagment.diabetesmanagment.proxies.Mpatientproxy;
 import com.diabetesmanagment.diabetesmanagment.service.CommentService;
 import com.diabetesmanagment.diabetesmanagment.service.PatientService;
 
+/**
+ * REST Controller for handling comment-related endpoints.
+ */
 @RestController
 public class CommentController {
 
 	@Autowired
 	BusinessService businessService;
 
+	  /**
+     * Endpoint to retrieve all comments of a specific patient.
+     *
+     * @param patient The patient's name.
+     * @return A list of comments associated with the patient.
+     */
 	@GetMapping(value = "/patient/comment/{patient}")
 	public List<String> getAllCommentOfOnePatient(@PathVariable String patient) {
 		return businessService.getNotes(businessService.getAllNoteOffOnePatient(patient));
 	}
 
+	  /**
+     * Endpoint to check the risk levels for a given patient based on age and comment occurrences.
+     *
+     * @param firstname The first name of the patient.
+     * @param lastname  The last name of the patient.
+     * @return The risk level for the patient.
+     */
 	@GetMapping("/check/{firstname}/{lastname}")
 	public String getRiskLevels(@PathVariable String firstname, @PathVariable String lastname) {
 		Boolean agechecker = businessService.ageChecker(businessService.getPatientInfo(firstname, lastname));

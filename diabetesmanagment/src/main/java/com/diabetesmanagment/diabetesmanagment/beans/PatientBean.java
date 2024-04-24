@@ -10,6 +10,9 @@ import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.Date;
 
+/**
+ * Represents a patient's information.
+ */
 public class PatientBean {
     
     @Size(max = 50, message = "The first name cannot exceed 50 characters.")

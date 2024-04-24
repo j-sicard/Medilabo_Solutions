@@ -10,6 +10,9 @@ import com.mpatient.mpatient.business.UserBusiness;
 import com.mpatient.mpatient.entity.UserMO;
 import com.mpatient.mpatient.service.UserService;
 
+/**
+ * Implementation of the UserBusiness interface that handles business logic related to user operations.
+ */
 @Service
 public class UserBusinessImpl implements UserBusiness {
 
@@ -18,6 +21,13 @@ public class UserBusinessImpl implements UserBusiness {
 
 	private static final Logger logger = Logger.getLogger(UserBusinessImpl.class.getName());
 
+	 /**
+     * Retrieves a user by username.
+     *
+     * @param username The username of the user to retrieve.
+     * @return The user information.
+     * @throws RuntimeException if an error occurs while fetching the user.
+     */
 	public UserMO getUser(String username) {
 		try {
 			UserMO user = userService.findByUsername(username);
@@ -33,6 +43,11 @@ public class UserBusinessImpl implements UserBusiness {
 		}
 	}
 	
+	/**
+     * Retrieves the list of all users.
+     *
+     * @return List of all users.
+     */
 	public List<UserMO> getUsers(){
 	    try {
 	        List<UserMO> users = userService.findUsers();
@@ -48,6 +63,11 @@ public class UserBusinessImpl implements UserBusiness {
 	    }    
 	}
 	
+	 /**
+     * Saves a new user.
+     *
+     * @param user The user entity to save.
+     */
 	public void saveUser(UserMO user) {
 		userService.saveUser(user);
 	}

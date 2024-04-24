@@ -5,6 +5,9 @@ import com.mpatient.mpatient.entity.PatientMO;
 
 import java.util.List;
 
+/**
+ * Interface defining the business logic for patient operations.
+ */
 public interface PatientBusiness {
 
 	public PatientMO getPatientInfo(String firstname, String lastname);

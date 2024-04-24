@@ -5,6 +5,9 @@ import com.mpatient.mpatient.entity.PatientMO;
 
 import java.util.List;
 
+/**
+ * Service interface for CRUD operations related to patients.
+ */
 public interface PatientCRUDService {
 
     public PatientMO FindPatientById(long patientID);

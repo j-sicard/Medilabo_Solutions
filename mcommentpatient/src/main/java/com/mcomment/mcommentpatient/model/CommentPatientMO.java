@@ -3,6 +3,9 @@ package com.mcomment.mcommentpatient.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * Model class representing comments made by patients.
+ */
 @Document(collection = "comments")
 public class CommentPatientMO {
 

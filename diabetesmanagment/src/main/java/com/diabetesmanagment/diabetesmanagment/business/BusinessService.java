@@ -5,6 +5,9 @@ import java.util.List;
 import com.diabetesmanagment.diabetesmanagment.beans.CommentPatientBean;
 import com.diabetesmanagment.diabetesmanagment.beans.PatientBean;
 
+/**
+ * Interface defining business operations for managing diabetes management system.
+ */
 public interface BusinessService {
 	
 	public List<String> getNotes(List<CommentPatientBean> listComment); 

@@ -1,5 +1,8 @@
 package com.diabetesmanagment.diabetesmanagment.beans;
 
+/**
+ * Represents a comment made by a patient.
+ */
 public class CommentPatientBean {
 
 		private String patId;

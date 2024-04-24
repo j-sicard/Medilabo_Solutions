@@ -5,8 +5,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+/**
+ * Global exception handler for handling exceptions thrown by controllers.
+ */
 @ControllerAdvice
 public class GlobalExceptionHandler {
+	
+	  /**
+     * Handle exceptions of type Exception.
+     *
+     * @param ex The exception to handle.
+     * @return ResponseEntity with HTTP status 500 and an error message.
+     */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleException(Exception ex) {
         // Log the exception

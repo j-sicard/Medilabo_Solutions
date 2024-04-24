@@ -8,6 +8,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
+/**
+ * Entity class representing a user in the system.
+ */
 @Entity
 @Table(name = "users")
 public class UserMO {

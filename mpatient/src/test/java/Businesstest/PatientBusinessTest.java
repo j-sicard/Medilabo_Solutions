@@ -13,28 +13,29 @@ import static org.junit.jupiter.api.Assertions.*;
 @Transactional
 public class PatientBusinessTest extends AbstractConfigurationTest {
 
-    @Autowired
-    PatientBusiness patientBusiness;
-    @Autowired
-    PatientRepository patientRepository;
-    @Test
-    void updatePatientInfoTest(){
-     }
+	@Autowired
+	PatientBusiness patientBusiness;
+	@Autowired
+	PatientRepository patientRepository;
 
-    @Test
-    void getPatientInfoTest(){
-        assertTrue(patientBusiness.getPatientInfo("TestNone", "Test").getAddress().equals("1 Brookside St"));
-    }
+	@Test
+	void updatePatientInfoTest() {
+	}
 
-    @Test
-    void deletePatientInfo(){
-    long countBefore = patientRepository.count();
+	@Test
+	void getPatientInfoTest() {
+		assertTrue(patientBusiness.getPatientInfo("TestNone", "Test").getAddress().equals("1 Brookside St"));
+	}
 
-    patientBusiness.deleteProfilePatient("TestDelete", "Test");
+	@Test
+	void deletePatientInfo() {
+		long countBefore = patientRepository.count();
 
-    long countAfter = patientRepository.count();
+		patientBusiness.deleteProfilePatient("TestDelete", "Test");
 
-    assertTrue(countBefore > countAfter);
-    }
+		long countAfter = patientRepository.count();
+
+		assertTrue(countBefore > countAfter);
+	}
 
 }

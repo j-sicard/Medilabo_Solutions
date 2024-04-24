@@ -3,11 +3,13 @@ package com.mpatient.mpatient.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
 
 import java.util.Date;
 
+/**
+ * Entity class representing a patient in the system.
+ */
 @Entity
 @Table(name = "patients")
 public class PatientMO {
@@ -28,7 +30,7 @@ public class PatientMO {
     @Past(message = "The date of birth must be in the past.")
     @Column(name = "date_of_birth")
     @JsonFormat(pattern = "yyyy-MM-dd")
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @Temporal(TemporalType.DATE)
     private Date birthDay;
 
     @NotNull(message = "Gender cannot be zero.")

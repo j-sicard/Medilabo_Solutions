@@ -8,6 +8,9 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 
+/**
+ * Represents the gender and birth date of a patient.
+ */
 public class SexeBirthDatePatientBean {
 
 

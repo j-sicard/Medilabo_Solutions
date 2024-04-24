@@ -4,6 +4,9 @@ import java.util.List;
 
 import com.mpatient.mpatient.entity.UserMO;
 
+/**
+ * Service interface for user-related operations.
+ */
 public interface UserService {
 
 	public UserMO findByUsername(String username); 

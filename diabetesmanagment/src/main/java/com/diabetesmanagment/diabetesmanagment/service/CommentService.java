@@ -4,6 +4,9 @@ import java.util.List;
 
 import com.diabetesmanagment.diabetesmanagment.beans.CommentPatientBean;
 
+/**
+ * Service interface for handling comments related to patients.
+ */
 public interface CommentService {
 
 	public List<String> getNotes(List<CommentPatientBean> listComment);

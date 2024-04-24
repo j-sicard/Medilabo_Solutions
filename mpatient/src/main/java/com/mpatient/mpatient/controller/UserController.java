@@ -17,12 +17,21 @@ import com.mpatient.mpatient.entity.UserMO;
 
 import jakarta.persistence.EntityNotFoundException;
 
+/**
+ * REST Controller for managing user entities.
+ */
 @RestController
 public class UserController {
 
 	@Autowired
 	UserBusiness userBusiness;
 
+	  /**
+     * Retrieves a user by username.
+     *
+     * @param username The username of the user to retrieve.
+     * @return ResponseEntity containing the user information or a notFound response if the user is not found.
+     */
 	@GetMapping("/user/{username}")
 	public ResponseEntity<UserMO> getUser(@PathVariable String username) {
 		try {
@@ -32,6 +41,11 @@ public class UserController {
 		}
 	}
 
+	 /**
+     * Retrieves the list of all users.
+     *
+     * @return List of all users.
+     */
 	@GetMapping("/user/users")
 	public List<UserMO> getUsers() {
 		try {
@@ -41,6 +55,11 @@ public class UserController {
 		}
 	}
 	
+	 /**
+     * Saves a new user.
+     *
+     * @param user The user entity to save.
+     */
 	@PostMapping("/user/save")
 	public void saveUser(@RequestBody UserMO user) {
 		userBusiness.saveUser(user); 
