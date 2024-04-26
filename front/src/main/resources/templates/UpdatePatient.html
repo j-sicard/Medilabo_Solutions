@@ -23,10 +23,10 @@
             <input type="hidden" name="_method" value="PUT">
             <!-- Utilisez th:value pour pré-remplir les champs -->
             <label for="firstname">First Name:</label>
-            <input type="text" id="firstname" name="firstname" th:value="${patient.firstname}" class="readonly-input" readonly><br><br>
+            <input type="text" id="firstname" name="firstname" th:value="${patient.firstname}" class="readonly-input" ><br><br>
 
             <label for="lastname">Last Name:</label>
-            <input type="text" id="lastname" name="lastname" th:value="${patient.lastname}" class="readonly-input" readonly><br><br>
+            <input type="text" id="lastname" name="lastname" th:value="${patient.lastname}" class="readonly-input" ><br><br>
 
             <label for="gender">Genre :</label>
             <select id="gender" name="gender">
@@ -48,7 +48,7 @@
             <input type="submit" class="btn btn-primary" value="Update patient">
             <a th:href="@{/patient/info/{firstname}/{lastname}(firstname=${patient.firstname}, lastname=${patient.lastname})}"
                 class="btn btn-success">
-                Back to patient information</a>
+                Back to patient information</a>        
         </form>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.diabetesmanagment.diabetesmanagment.beans.CommentPatientBean;
 import com.diabetesmanagment.diabetesmanagment.proxies.McommentProxy;
+import com.diabetesmanagment.diabetesmanagment.proxies.Mpatientproxy;
 import com.diabetesmanagment.diabetesmanagment.service.CommentService;
 
 /**
@@ -24,6 +25,9 @@ public class CommentServiceImpl implements CommentService {
 	@Autowired
 	McommentProxy mcommentProxy;
 	
+	@Autowired
+	Mpatientproxy mPatientProxy; 
+	
 	private static final Logger logger = Logger.getLogger(CommentServiceImpl.class.getName());
 
 	 /**
@@ -33,9 +37,9 @@ public class CommentServiceImpl implements CommentService {
      * @return A list of CommentPatientBean objects representing the comments.
      */
 	public List<CommentPatientBean> getAllCommentForOnePatient(String Patient) {
-		return mcommentProxy.findAllCommentOfOnePatient(Patient);
+		return mPatientProxy.findAllCommentOfOnePatient(Patient);
 	}
-
+		
 	/**
      * Extracts the notes from a list of CommentPatientBean objects.
      *

@@ -43,6 +43,7 @@ public class PatientBusinessImpl implements PatientBusiness {
 					"Patient not found with firstname: " + firstname + " and lastname: " + lastname);
 		}
 	}
+	
 
 	/**
      * Retrieves the list of all patients.

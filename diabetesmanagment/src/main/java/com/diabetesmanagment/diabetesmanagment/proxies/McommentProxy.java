@@ -12,16 +12,9 @@ import com.diabetesmanagment.diabetesmanagment.beans.CommentPatientBean;
  * Feign client interface for interacting with the Comment service.
  * This interface defines methods to retrieve comments related to patients.
  */
-@FeignClient(name = "mcommentpatient", url = "localhost:9002")
+@FeignClient(name = "mcommentpatient")
 public interface  McommentProxy {
 
-	/**
-	 * Retrieves all comments for a specific patient from the Comment service.
-	 *
-	 * @param patient The name of the patient.
-	 * @return A list of CommentPatientBean objects representing the comments for the patient.
-	 */
-	@GetMapping(value = "/comment/patient/comment/{patient}")
-	public List<CommentPatientBean> findAllCommentOfOnePatient(@PathVariable String patient);
+	
 
 }

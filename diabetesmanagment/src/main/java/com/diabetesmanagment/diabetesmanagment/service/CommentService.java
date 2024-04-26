@@ -11,7 +11,7 @@ public interface CommentService {
 
 	public List<String> getNotes(List<CommentPatientBean> listComment);
 
-	public  List<CommentPatientBean> getAllCommentForOnePatient (String Patient);
+	public  List<CommentPatientBean> getAllCommentForOnePatient (String Patient);	
 	
 	public String mergeNotes(List<String> notes);
 	

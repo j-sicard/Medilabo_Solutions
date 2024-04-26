@@ -96,7 +96,7 @@ public class BusinessServiceImpl implements BusinessService {
 	public List<CommentPatientBean> getAllCommentForOnePatient(String firstname) {
 		return commentService.getAllCommentForOnePatient(firstname);
 	}
-
+	
 	/**
      * Retrieves information about a specific patient.
      *
@@ -107,7 +107,7 @@ public class BusinessServiceImpl implements BusinessService {
 	public PatientBean getPatientInfo(String firstname, String lastname) {
 		return patientService.findPatient(firstname, lastname);
 	}
-
+	
 	/**
      * Calculates the risk levels for a patient based on age and comment occurrences.
      *

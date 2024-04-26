@@ -30,7 +30,7 @@ public class PatientServiceImpl implements PatientService {
 	public PatientBean findPatient(String firstname, String lastname) {
 		return mpatientproxy.getPatientInfo(firstname, lastname);
 	}
-
+	
 	/**
      * Checks if the patient is feminine and older than a specified age.
      *

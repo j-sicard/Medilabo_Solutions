@@ -52,5 +52,6 @@ public class CommentController {
 		PatientBean patient = businessService.getPatientInfo(firstname, lastname);
 
 		return businessService.getRiskLevels(agechecker, occurenceCount, patient);
-	}
+	}	
+
 }

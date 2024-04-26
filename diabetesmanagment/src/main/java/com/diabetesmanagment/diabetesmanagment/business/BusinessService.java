@@ -22,7 +22,7 @@ public interface BusinessService {
 	
 	public List<CommentPatientBean> getAllCommentForOnePatient(String firstname); 
 	
-	public PatientBean getPatientInfo(String firstname, String lastname); 
+	public PatientBean getPatientInfo(String firstname, String lastname); 		
 	
 	public Boolean ageChecker(PatientBean patient); 
 

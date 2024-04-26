@@ -59,8 +59,9 @@ public class FrontController {
 	    model.addAttribute("patient", patient);
 	    model.addAttribute("risk", risk); 
 	    model.addAttribute("comments",  comments); 
-	    return "patientInfo";
+	    return "PatientInfo";
 	}
+	
 
 	 /**
      * Handles GET requests to display the form for adding a new patient.

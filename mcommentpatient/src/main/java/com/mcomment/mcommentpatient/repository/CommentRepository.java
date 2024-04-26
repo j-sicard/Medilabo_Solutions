@@ -29,5 +29,7 @@ public interface CommentRepository extends MongoRepository<CommentPatientMO, Str
 	 * @return A list of comments associated with the specified patient.
 	 */
 	List<CommentPatientMO> findByPatient(String patient);
+	
+	List<CommentPatientMO> findByPatId(String id);
 
 }

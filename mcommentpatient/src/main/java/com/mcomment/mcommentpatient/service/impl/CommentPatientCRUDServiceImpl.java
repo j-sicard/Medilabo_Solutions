@@ -44,6 +44,5 @@ public class CommentPatientCRUDServiceImpl implements CommentPatientCRUDService{
      */
 	public List<CommentPatientMO> getcommentsOfpatient(String patient){
 		return commentRepository.findByPatient(patient); 
-	}
-	
+	}	
 }

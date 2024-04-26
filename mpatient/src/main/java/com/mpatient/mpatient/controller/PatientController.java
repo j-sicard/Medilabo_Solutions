@@ -38,7 +38,7 @@ public class PatientController {
             return ResponseEntity.notFound().build();
         }
     }
-
+    
     /**
      * Endpoint to retrieve the list of all patients.
      *

@@ -2,7 +2,6 @@ package com.mfront.front.beans;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
@@ -14,7 +13,7 @@ import java.util.Date;
 /**
  * Bean class representing a patient.
  */
-public class PatientBean {
+public class PatientBean {	 
     
     @Size(max = 50, message = "The first name cannot exceed 50 characters.")
     @Pattern(regexp = "^[a-zA-Z]*$", message = "The first name can only contain letters.")
@@ -43,7 +42,7 @@ public class PatientBean {
     public PatientBean() {
     }
 
-    public PatientBean(String firstname, String lastname, Date birthDay, String gender, String address, String phoneNumber) {
+    public PatientBean(String firstname, String lastname, Date birthDay, String gender, String address, String phoneNumber) {    
         this.firstname = firstname;
         this.lastname = lastname;
         this.birthDay = birthDay;
@@ -51,8 +50,9 @@ public class PatientBean {
         this.address = address;
         this.phoneNumber = phoneNumber;
     }
-
-    public String getFirstname() {
+    
+    
+	public String getFirstname() {
         return firstname;
     }
 

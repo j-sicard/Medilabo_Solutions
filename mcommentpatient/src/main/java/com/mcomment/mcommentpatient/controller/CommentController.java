@@ -51,5 +51,6 @@ public class CommentController {
 	@GetMapping(value = "/patient/comment/{patient}")
 	public List<CommentPatientMO> getAllCommentOfOnePatient(@PathVariable String patient) {
 		return commentPatientCRUDService.getcommentsOfpatient(patient);
-	}
+	}	
+
 }
