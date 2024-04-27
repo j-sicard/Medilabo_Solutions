@@ -20,11 +20,11 @@ Crée les image Docker de chaque micro service :
 
 ![3](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/ec509426-8b64-49f2-807f-a0531c4fd272)
 
-- Puis taper la commande cuisante et apuillé sur entrée:
+- Puis taper la commande suivante et apuillé sur entrée:
 
 ![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/5bc7ee0d-3eb4-4ef4-b838-2c1a74a02edf)
 
-- Une fois l'opération tenue fois l'opération terminée un message de succès devrait apparaitre rminé un message de succès devrait apparaitre : 
+- Une fois fois l'opération terminée un message de succès devrait apparaitre: 
 
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/98b03fe9-0790-4749-a6b3-5082f3eb9485)
 
@@ -33,6 +33,17 @@ Crée les image Docker de chaque micro service :
 
 - Il devrait apparaitre ceci:  
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/8001bc4d-a253-4b7e-b09e-a46b50e085d3)
+
+Crée l'image docker du service suivant :
+
+- déplacé vous dans le fichier racine du service diabetesmanagment. 
+
+- Puis taper la commande suivante et apuillé sur entrée:
+
+![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/5bc7ee0d-3eb4-4ef4-b838-2c1a74a02edf)
+
+
+
 
 
 
