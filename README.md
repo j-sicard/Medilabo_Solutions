@@ -114,12 +114,21 @@ Création du docker-compose pour le lancement de l'application :
 
 - Revener dans votre IDE et déplacez-vous dans le fichier principal du projet:
     
-![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/9e7c7081-2c26-4e78-a2cf-038cf456766b)
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/8818a2ba-3aa3-4cee-8b18-1e06baeac2d5)
 
-
-
-
+- taper la commande suivant et appuillé sur entrée:
   
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/9fa8531a-c79f-4214-8629-fb12cbc46528)
+
+
+- les informations suivantes devraient apparaître et l'application devrée se lancer :
+
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/889ee495-bac9-4c03-b40c-e42944a2bc4f)
+
+Dans votre docker desktop vous pouvez constater que les services se lancent :
+
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/2c45370c-72e7-4931-a8e8-b50e75aad135)
+
 
 
 
