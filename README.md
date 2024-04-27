@@ -20,7 +20,7 @@ Crée les image Docker de chaque micro service :
 
 ![3](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/ec509426-8b64-49f2-807f-a0531c4fd272)
 
-- Tapez la comment 
+- Tapez la commande suivante : 
 
 ![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/5bc7ee0d-3eb4-4ef4-b838-2c1a74a02edf)
 
