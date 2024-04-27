@@ -16,7 +16,7 @@ sont accessibles via un microservice de type "gateway" développé avec Spring C
 Une fois l'application installé sur votre post de travaille
 
 Crée les images Docker de chaque micro service :
-
+ 
 - déplacé vous dans le fichier racine du service api-gateway 
 
 ![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/47d54cd5-0cfd-437e-8a28-9d8f0869b517)
