@@ -33,7 +33,7 @@ Crée les image Docker de chaque micro service :
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/a8b262d5-0911-498c-94f3-7d53fe18c005)
 
 - Il devrait apparaitre ceci:
-- 
+ 
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/8001bc4d-a253-4b7e-b09e-a46b50e085d3)
 
 Crée l'image docker du service suivant :
@@ -57,8 +57,9 @@ Crée l'image du service Eurekaserveur
 ![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/5bc7ee0d-3eb4-4ef4-b838-2c1a74a02edf)
 
 - taper la commande suivant et appuillé sur entrée:
-- 
-![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/462b90c8-d3e4-4389-a752-c747d4896280)
+
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/2fc8efa8-572b-4691-94f4-2b8535f1b7c5)
+
 
   
 
