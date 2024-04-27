@@ -15,7 +15,7 @@ sont accessibles via un microservice de type "gateway" développé avec Spring C
 
 Une fois l'application installé sur votre post de travaille
 
-Crée les image Docker de chaque micro service :
+Crée les images Docker de chaque micro service :
 
 - déplacé vous dans le fichier racine du service api-gateway 
 
