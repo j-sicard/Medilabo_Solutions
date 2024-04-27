@@ -129,6 +129,15 @@ Dans votre docker desktop vous pouvez constater que les services se lancent :
 
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/2c45370c-72e7-4931-a8e8-b50e75aad135)
 
+Veuillez noter qu'un court délai peut être nécessaire avant que tous les services, y compris l'API MySQL, ne soient entièrement opérationnels.
+Le service mpatient démarrera après l'initialisation de l'API MySQL. Une fois que le service mpatient est en ligne, l'application sera prête à être utilisée.
+
+Après quelques instants une fois que tous les services sont lancés, vous pouvez le vérifier en accédant à l'URL suivante : http://localhost:8761/.
+Cette URL vous permettra de visualiser le tableau de bord Eureka où vous pourrez observer l'état et la disponibilité des services.
+
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/ecd5af3c-3cc7-47d7-9527-b714c9db0ecf)
+
+
 
 
 
