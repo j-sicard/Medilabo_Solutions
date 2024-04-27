@@ -8,6 +8,9 @@ Projet 9 formation développeur d'application java : Développez une solution en
 
 Cette application a été développée pour aider à détecter le diabète de type 2 chez les patients. Elle est composée de plusieurs microservices basés sur des projets Spring Boot, et ces microservices sont accessibles via un microservice de type "gateway" développé avec Spring Cloud Gateway. 
 
+Installation de l'Application
+Voici les instructions pour installer et exécuter l'application sur votre machine :
+
 ![4](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/7c1e5c75-cd1f-4f14-8c1d-5830c95db695)
 
 
