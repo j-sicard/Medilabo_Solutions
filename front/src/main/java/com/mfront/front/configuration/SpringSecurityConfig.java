@@ -36,8 +36,9 @@ public class SpringSecurityConfig {
 
 						.anyRequest().authenticated())
 
-				.formLogin((form) -> form.permitAll())
-
+				.formLogin((form) -> form
+			            .permitAll()
+			            .defaultSuccessUrl("http://localhost:8080/patient/list"))
 				.logout((logout) -> logout.permitAll());
 
 		return http.build();
