@@ -1,8 +1,11 @@
 Projet 9 formation développeur d'application java : Développez une solution en microservices pour votre client
 
-1 - Vous trouverez ci-dessous les informations concernant le green code.
+Cette application a été développée pour aider à détecter le diabète de type 2 chez les patients.
+Elle est composée de plusieurs microservices basés sur des projets Spring Boot, et ces microservices
+sont accessibles via un microservice de type "gateway" développé avec Spring Cloud Gateway. 
 
-2 - Vous trouverez au niveau de la branche master le Readme technique de l'application.
+ 1. Vous trouverez ci-dessous toutes les informations nécessaires pour installer l'application 
+ 2. Vous trouverez ci-dessous les informations concernant le green code.
 
 ![1](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/537f9a42-51fe-46da-8f26-589df481f9b8)
 
@@ -136,21 +139,6 @@ Après quelques instants une fois que tous les services sont lancés, vous pouve
 Cette URL vous permettra de visualiser le tableau de bord Eureka où vous pourrez observer l'état et la disponibilité des services.
 
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/ecd5af3c-3cc7-47d7-9527-b714c9db0ecf)
-
-
-
-
-
-
-
-
-
-
-
-Cette application a été développée pour aider à détecter le diabète de type 2 chez les patients. Elle est composée de plusieurs microservices basés sur des projets Spring Boot, et ces microservices sont accessibles via un microservice de type "gateway" développé avec Spring Cloud Gateway. 
-
-Installation de l'Application
-Voici les instructions pour installer et exécuter l'application sur votre machine :
 
 ![4](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/7c1e5c75-cd1f-4f14-8c1d-5830c95db695)
 
