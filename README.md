@@ -149,7 +149,7 @@ En utilisant ce lien, vous serez dirigé vers la page de connexion de votre appl
 ![4](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/7c1e5c75-cd1f-4f14-8c1d-5830c95db695)
 
 Les identifiants sont : 
-                       - username : user
+                       - username : user 
                        - password : user
 
 Les données sont déjà préenregistrées dans la base de données pour faciliter le démarrage et la démonstration.
