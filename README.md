@@ -46,7 +46,23 @@ Crée l'image docker du service suivant :
 
 - taper la commande suivant et appuillé sur entrée:
 
-  ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/c64d377e-acc8-4b5b-a0aa-f5a494d24104)
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/c64d377e-acc8-4b5b-a0aa-f5a494d24104)
+
+Crée l'image du service Eurekaserveur 
+
+- déplacé vous dans le fichier racine du service eurekaserveur. 
+
+- Puis taper la commande suivante et apuillé sur entrée:
+
+![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/5bc7ee0d-3eb4-4ef4-b838-2c1a74a02edf)
+
+- taper la commande suivant et appuillé sur entrée:
+- 
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/462b90c8-d3e4-4389-a752-c747d4896280)
+
+  
+
+
 
 
 
