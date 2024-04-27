@@ -99,15 +99,24 @@ Crée l'image du service mpatient
 Vérifier que toutes les images ont bien étés enregitrées
 
 - taper la commande suivant et appuillé sur entrée:
-- 
+  
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/73500994-eec5-43a8-b165-31dba3bf297f)
 
 - les informations suivantes devraient apparaître :
 
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/091f1124-c8fb-4e59-93f7-77be6c1e7b6d)
 
+Création du docker-compose pour le lancement de l'application :
 
+- Lancez votre logitel Docker Desktop
+
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/8bd5ba15-3e5d-4f9d-953a-d18b20c45f72)
+
+- Revener dans votre IDE et déplacez-vous dans le fichier principal du projet:
     
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/9e7c7081-2c26-4e78-a2cf-038cf456766b)
+
+
 
 
   
