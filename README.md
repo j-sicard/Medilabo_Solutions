@@ -96,6 +96,17 @@ Crée l'image du service mpatient
   
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/b81d1482-e787-4846-a743-0c0c1de49b8f)
 
+Vérifier que toutes les images ont bien étés enregitrées
+
+- taper la commande suivant et appuillé sur entrée:
+- 
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/73500994-eec5-43a8-b165-31dba3bf297f)
+
+- les informations suivantes devraient apparaître :
+
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/091f1124-c8fb-4e59-93f7-77be6c1e7b6d)
+
+
     
 
 
