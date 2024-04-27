@@ -23,7 +23,7 @@ Crée les images Docker de chaque micro service :
 
 ![3](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/ec509426-8b64-49f2-807f-a0531c4fd272)
 
-- Puis taper la commande suivante et apuillé sur entrée:
+- Puis taper la commande suivante et appuyez sur entrée:
 
 ![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/5bc7ee0d-3eb4-4ef4-b838-2c1a74a02edf)
 
@@ -31,7 +31,7 @@ Crée les images Docker de chaque micro service :
 
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/98b03fe9-0790-4749-a6b3-5082f3eb9485)
 
-- Puis taper la commande cuisante et apuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
   
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/a8b262d5-0911-498c-94f3-7d53fe18c005)
 
@@ -43,11 +43,11 @@ Crée l'image docker du service suivant :
 
 - déplacé vous dans le fichier racine du service diabetesmanagment. 
 
-- Puis taper la commande suivante et apuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
 
 ![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/5bc7ee0d-3eb4-4ef4-b838-2c1a74a02edf)
 
-- taper la commande suivant et appuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
 
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/c64d377e-acc8-4b5b-a0aa-f5a494d24104)
 
@@ -55,11 +55,11 @@ Crée l'image du service Eurekaserveur
 
 - déplacé vous dans le fichier racine du service eurekaserveur. 
 
-- Puis taper la commande suivante et apuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
 
 ![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/5bc7ee0d-3eb4-4ef4-b838-2c1a74a02edf)
 
-- taper la commande suivant et appuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
 
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/2fc8efa8-572b-4691-94f4-2b8535f1b7c5)
 
@@ -67,11 +67,11 @@ Crée l'image du service front
 
 - déplacé vous dans le fichier racine du service front. 
 
-- Puis taper la commande suivante et apuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
 
 ![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/5bc7ee0d-3eb4-4ef4-b838-2c1a74a02edf)
 
-- taper la commande suivant et appuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
   
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/22d49b9f-c214-4a69-8a11-f65c02629797)
 
@@ -79,11 +79,11 @@ Crée l'image du service mcommentpatient
 
 - déplacé vous dans le fichier racine du service commentpatient. 
 
-- Puis taper la commande suivante et apuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
 
 ![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/5bc7ee0d-3eb4-4ef4-b838-2c1a74a02edf)
 
-- taper la commande suivant et appuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
     
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/d5c765b5-b7b4-4772-b43e-c3455c5a0865)
 
@@ -91,17 +91,17 @@ Crée l'image du service mpatient
 
 - déplacé vous dans le fichier racine du service mpatient. 
 
-- Puis taper la commande suivante et apuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
 
 ![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/5bc7ee0d-3eb4-4ef4-b838-2c1a74a02edf)
 
-- taper la commande suivant et appuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
   
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/b81d1482-e787-4846-a743-0c0c1de49b8f)
 
 Vérifier que toutes les images ont bien étés enregitrées
 
-- taper la commande suivant et appuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
   
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/73500994-eec5-43a8-b165-31dba3bf297f)
 
@@ -119,7 +119,7 @@ Création du docker-compose pour le lancement de l'application :
     
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/8818a2ba-3aa3-4cee-8b18-1e06baeac2d5)
 
-- taper la commande suivant et appuillé sur entrée:
+- taper la commande suivante et appuyez sur entrée:
   
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/9fa8531a-c79f-4214-8629-fb12cbc46528)
 
