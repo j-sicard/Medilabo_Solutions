@@ -140,6 +140,12 @@ Cette URL vous permettra de visualiser le tableau de bord Eureka où vous pourre
 
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/ecd5af3c-3cc7-47d7-9527-b714c9db0ecf)
 
+Une fois que tous les services sont lancés, vous pouvez vous diriger vers le lien suivant pour accéder à la page de connexion :
+
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/ab30364d-af6a-4733-8473-5de0ef69d0e4)
+
+En utilisant ce lien, vous serez dirigé vers la page de connexion de votre application où vous pourrez saisir vos informations d'identification pour vous connecter.
+
 ![4](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/7c1e5c75-cd1f-4f14-8c1d-5830c95db695)
 
 
