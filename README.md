@@ -142,8 +142,6 @@ Cette URL vous permettra de visualiser le tableau de bord Eureka où vous pourre
 
 Une fois que tous les services sont lancés, vous pouvez vous diriger vers le lien suivant pour accéder à la page de connexion :
 
-![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/ab30364d-af6a-4733-8473-5de0ef69d0e4)
-
 Les identifiants sont : 
                        - username : user 
                        - password : user
@@ -151,6 +149,9 @@ Les identifiants sont :
 Les données sont déjà préenregistrées dans la base de données pour faciliter le démarrage et la démonstration.
 
 En utilisant ce lien, vous serez dirigé vers la page de connexion de votre application où vous pourrez saisir vos informations d'identification pour vous connecter.
+
+
+![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/ab30364d-af6a-4733-8473-5de0ef69d0e4)
 
 ![4](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/7c1e5c75-cd1f-4f14-8c1d-5830c95db695)
 
