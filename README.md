@@ -144,16 +144,15 @@ Une fois que tous les services sont lancés, vous pouvez vous diriger vers le li
 
 ![5](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/ab30364d-af6a-4733-8473-5de0ef69d0e4)
 
-En utilisant ce lien, vous serez dirigé vers la page de connexion de votre application où vous pourrez saisir vos informations d'identification pour vous connecter.
-
-![4](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/7c1e5c75-cd1f-4f14-8c1d-5830c95db695)
-
 Les identifiants sont : 
                        - username : user 
                        - password : user
 
 Les données sont déjà préenregistrées dans la base de données pour faciliter le démarrage et la démonstration.
 
+En utilisant ce lien, vous serez dirigé vers la page de connexion de votre application où vous pourrez saisir vos informations d'identification pour vous connecter.
+
+![4](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/7c1e5c75-cd1f-4f14-8c1d-5830c95db695)
 
 Avant de proposer des suggestions pour améliorer l'application du point de vue du green code, commençons par définir ce concept : le green code. 
 
