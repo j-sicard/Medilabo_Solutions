@@ -6,6 +6,7 @@ Projet 9 formation développeur d'application java : Développez une solution en
 
 ![2](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/f451f338-a465-428d-ae6e-30d2693bd6c3)
 ![3](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/32ee7b8b-4346-4e83-8806-d7e00be1cb9a)
+![4](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/d0a39017-cea7-4ede-8ede-dd5014b60d05)
 
 ![1](https://github.com/j-sicard/Medilabo_Solutions/assets/106332407/537f9a42-51fe-46da-8f26-589df481f9b8)
 
