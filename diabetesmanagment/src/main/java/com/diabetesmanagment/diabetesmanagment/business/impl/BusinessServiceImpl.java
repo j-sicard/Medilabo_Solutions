@@ -90,11 +90,11 @@ public class BusinessServiceImpl implements BusinessService {
 	/**
 	 * Retrieves all comments of a specific patient.
 	 *
-	 * @param firstname The first name of the patient.
+	 * @param lastname The first name of the patient.
 	 * @return The list of comments associated with the patient.
 	 */
-	public List<CommentPatientBean> getAllCommentForOnePatient(String firstname) {
-		return commentService.getAllCommentForOnePatient(firstname);
+	public List<CommentPatientBean> getAllCommentForOnePatient(String lastname) {
+		return commentService.getAllCommentForOnePatient(lastname);
 	}
 	
 	/**

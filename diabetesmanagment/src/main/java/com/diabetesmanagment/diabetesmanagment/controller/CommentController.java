@@ -48,7 +48,7 @@ public class CommentController {
 	public String getRiskLevels(@PathVariable String firstname, @PathVariable String lastname) {
 		Boolean agechecker = businessService.ageChecker(businessService.getPatientInfo(firstname, lastname));
 		int occurenceCount = businessService.occurenceCount(businessService
-				.mergeNotes(businessService.getNotes(businessService.getAllCommentForOnePatient(firstname))));
+				.mergeNotes(businessService.getNotes(businessService.getAllCommentForOnePatient(lastname))));
 		PatientBean patient = businessService.getPatientInfo(firstname, lastname);
 
 		return businessService.getRiskLevels(agechecker, occurenceCount, patient);

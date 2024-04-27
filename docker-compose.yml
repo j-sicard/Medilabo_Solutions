@@ -8,46 +8,45 @@ services:
 
   mpatient:
     image: mpatient
+    command: ["./wait-for-mysql.sh", "java", "-jar", "/app.jar"]
     ports: 
       - "9001:9001" 
     depends_on:
       - mysql-db 
-    links:
-    - eurekaserveur
     environment: 
-     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserveur:8761/eureka/  
-
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserveur:8761/eureka/ 
+    restart: on-failure      
+ 
   api-gateway:
     image: api-gateway
     ports: 
       - "8765:8765"
     links:
-    - eurekaserveur
+      - eurekaserveur
     environment: 
-     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserveur:8761/eureka/  
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserveur:8761/eureka/  
     
   diabetesmanagment:
-   image: diabetesmanagment
-   ports: 
-    - "9003:9003"  
-   environment: 
+    image: diabetesmanagment
+    ports: 
+      - "9003:9003"  
+    environment: 
       API_GATEWAY_URL: http://api-gateway:8765
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserveur:8761/eureka/
-   depends_on:
+    depends_on:
       - api-gateway
-   links:
-    - eurekaserveur 
-    
+    links:
+      - eurekaserveur 
     
   mcommentpatient:
     image: mcommentpatient
     ports: 
       - "9002:9002"
     links:
-    - eurekaserveur
+      - eurekaserveur
     environment: 
-     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserveur:8761/eureka/     
-
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserveur:8761/eureka/  
+  
   front:
     image: front
     ports: 
@@ -58,7 +57,7 @@ services:
     depends_on:
       - api-gateway
     links:
-    - eurekaserveur
+      - eurekaserveur
       
   mysql-db:
     image: 'mysql:latest'
@@ -71,16 +70,19 @@ services:
       - '3307:3307'
     volumes:
       - mysql-vol:/d/data/mysql
+      - ./data.sql:/docker-entrypoint-initdb.d/data.sql
 
   mongo-db:
     image: 'mongo:latest'
     environment:
-      MONGO_INITDB_DATABASE: 'comment_db'
+      MONGO_INITDB_DATABASE: comment_db      
     restart: always
     ports:
       - '27017:27017'
     volumes:
       - mongo-vol:/d/data/mongo
+      - ./data.js:/docker-entrypoint-initdb.d/data.js
+          
 
 volumes:
   mysql-vol:

@@ -37,6 +37,7 @@ public class CommentServiceImpl implements CommentService {
      * @return A list of CommentPatientBean objects representing the comments.
      */
 	public List<CommentPatientBean> getAllCommentForOnePatient(String Patient) {
+		logger.info("All comment of patient: " + mPatientProxy.findAllCommentOfOnePatient(Patient));
 		return mPatientProxy.findAllCommentOfOnePatient(Patient);
 	}
 		
@@ -77,8 +78,7 @@ public class CommentServiceImpl implements CommentService {
      * @return The count of unique terms found in the note.
      */
 	public int countUniqueTerms(String note, String[] termsToCheck) {
-		Map<String, Integer> uniqueTerms = new HashMap<>();
-
+		Map<String, Integer> uniqueTerms = new HashMap<>();	
 		// Normalize the string to NFD form and remove diacritics
 		note = Normalizer.normalize(note, Normalizer.Form.NFD).replaceAll("\\p{InCombiningDiacriticalMarks}+", "")
 				.replaceAll("[^a-zA-Z0-9\\s]", "").toLowerCase();
@@ -92,7 +92,7 @@ public class CommentServiceImpl implements CommentService {
 			for (String word : words) {
 				if (word.equals(normalizedTerm)) {
 					uniqueTerms.put(term, uniqueTerms.getOrDefault(term, 0) + 1);
-					 System.out.println("Mot trouvé : " + term);
+					logger.info(" Terms find: " + term);
 					break;
 				}
 			}
